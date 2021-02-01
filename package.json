@@ -15,7 +15,7 @@
     "express": "^4.17.1",
     "pug": "^3.0.0"
   },
-  "enginges": {
+  "engines": {
     "node": ">=10.0.0"
   }
 }
