@@ -1,0 +1,80 @@
+:root {
+  --background: #b3fffb;
+  --background-accent: #a3ebf8;
+  --background-accent-2: #6ecee6;
+  --dark: rgba(16, 17, 17, 0.767);
+}
+
+::-moz-selection {
+  background-color: rgba(16, 17, 17, 0.767);
+  color: #fff;
+}
+
+::selection {
+  background-color: rgba(16, 17, 17, 0.767);
+  color: #fff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+  font-weight: 300;
+  font-family: "Noto Sans JP", sans-serif !important;
+  color: #777;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Oxanium", cursive;
+  font-weight: 300;
+}
+
+.navbar-nav {
+  padding-right: 10vw;
+  font-family: "Oxanium", cursive;
+  font-size: 1.05vw;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 0px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .header {
+    width: 90vw;
+  }
+}
+
+/*  Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .header {
+    margin: auto;
+    width: 90vw;
+  }
+}
