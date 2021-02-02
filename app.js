@@ -24,6 +24,12 @@ app.get('/about', (req, res)=> {
     });
 });
 
+app.get('/construction', (req, res)=> {
+    res.status(200).render('construction', {
+        test: 'Thao Phuong',
+    });
+});
+
 
 const port = process.env.PORT || 3000; 
 app.listen(port, () => {

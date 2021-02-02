@@ -80,14 +80,14 @@ nav ul li {
 /* Footer */
 .site-footer {
   background-color: #09203f;
-  padding: 40px 0 20px;
+  padding: 40px 0 40px;
   font-size: 15px;
   line-height: 24px;
-  color: #737373;
+  color: #9c9696;
 }
 
 .site-footer a {
-  color: #737373;
+  color: #c0baba;
 }
 .site-footer a:hover {
   color: #3366cc;
@@ -101,7 +101,7 @@ nav ul li {
   display: block;
 }
 .footer-links a {
-  color: #737373;
+  color: #9c9999;
 }
 .footer-links a:active,
 .footer-links a:focus,
@@ -116,16 +116,16 @@ nav ul li {
   text-align: right;
 }
 .site-footer .social-icons a {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin-left: 6px;
-  margin-right: 0;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  margin-right: 10px;
   border-radius: 100%;
   background-color: #33353d;
+  color: rgb(156, 154, 154);
 }
 .copyright-text {
-  margin: 0;
+  margin: auto;
 }
 @media (max-width: 991px) {
   .site-footer [class^="col-"] {
@@ -184,7 +184,7 @@ nav ul li {
   width: 34px;
   font-size: 14px;
 }
-.social-icons a.facebook:hover {
+.social-icons a.github:hover {
   background-color: #3b5998;
 }
 .social-icons a.twitter:hover {
@@ -193,9 +193,7 @@ nav ul li {
 .social-icons a.linkedin:hover {
   background-color: #007bb6;
 }
-.social-icons a.dribbble:hover {
-  background-color: #ea4c89;
-}
+
 @media (max-width: 767px) {
   .social-icons li.title {
     display: block;
