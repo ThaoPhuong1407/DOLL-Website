@@ -1,15 +1,14 @@
 header.header
     nav.navbar.navbar-expand-lg.navbar-dark.transparent
         .container-fluid
-            a.navbar-brand(href="#")
-                img.d-inline-block.align-top(src="/img/logo-white.png" alt="" width="150vw" height=auto) 
+            a.navbar-brand(href="/")
+                img.d-inline-block.align-top.logoSize(src="/img/logo-white.png" alt="" width="150vw" height=auto) 
 
             // Hamburger button
             button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
                 span.navbar-toggler-icon
 
-
-            .collapse.navbar-collapse#navbarSupportedContent
+            .collapse.navbar-collapse#navbarSupportedContent.drop-down 
                 ul.navbar-nav.w-100.justify-content-end
                     li.nav-item
                         a.nav-link(aria-current="page" href="/about") About
@@ -31,6 +30,5 @@ header.header
                                 a.dropdown-item(href="#") Press Releases
                                 a.dropdown-item(href="#") Blog
                                 a.dropdown-item(href="#") Publication
-
                     li.nav-item
                         a.nav-link(href="#") Contact
