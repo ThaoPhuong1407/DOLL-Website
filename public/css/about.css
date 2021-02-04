@@ -1,3 +1,60 @@
 body {
-  background-color: black;
+  background-color: rgb(11, 19, 29);
+}
+
+.section {
+  margin: auto;
+  padding: 0rem 20rem;
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  letter-spacing: 0.25vw;
+}
+
+.whySection {
+  padding-top: 12rem;
+  padding-bottom: 5rem;
+  color: white;
+  font-weight: 300;
+  /* font-size: 2vw; */
+}
+
+.ourTeamSection {
+}
+
+.futureGoalsSection {
+  background-color: white;
+  color: black;
+}
+
+.background-about {
+  display: flex;
+  background-image: url(/img/headerBG3.jpg);
+  background-position: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+  width: 100%;
+}
+
+.blur-about {
+  background-image: linear-gradient(to bottom, #09203f 0%, #325168bd 100%);
+  backdrop-filter: blur(7.5px);
+  width: 100%;
+}
+
+.description {
+  margin-top: 3rem;
+}
+
+.whySection h1 {
+  font-size: 4.5vw;
+  letter-spacing: 0vw;
+}
+
+.whySection p {
+  font-size: 1vw;
+  letter-spacing: -0.01vw;
 }
