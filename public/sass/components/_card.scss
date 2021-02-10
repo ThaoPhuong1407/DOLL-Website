@@ -79,7 +79,7 @@
           rgba($color-secondary-light, 0.15),
           $color-secondary-dark
         ),
-        url(../img/Thao.jpg);
+        url(../img/Paul.jpg);
     }
 
     &--2 {
@@ -97,7 +97,25 @@
           rgba($color-tertiary-light, 0.15),
           $color-tertiary-dark
         ),
+        url(../img/Dan.png);
+    }
+
+    &--4 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.15),
+          $color-primary-dark
+        ),
         url(../img/Thao.jpg);
+    }
+
+    &--5 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.15),
+          $color-secondary-dark
+        ),
+        url(../img/Paul.jpg);
     }
   }
 
