@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/', (req, res)=> {
-    res.status(200).render('homepage', {
+    res.status(200).render('home', {
         test: 'Thao Phuong',
     });
 });

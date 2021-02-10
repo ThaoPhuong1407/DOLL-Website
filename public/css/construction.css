@@ -13,7 +13,7 @@ main {
 body {
   font-size: 12px;
   font-family: "Josefin Sans", "Roboto", sans-serif;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgb(234, 251, 255);
   overflow: hidden;
   background-color: #252627;
 }
@@ -35,6 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-top: 25vh;
+  color: rgba(255, 255, 255, 0.966);
 }
 .advice__title {
   font-size: 3rem;

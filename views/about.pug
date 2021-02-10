@@ -1,44 +1,179 @@
 extends base
 
-block styles
-    link(rel='stylesheet' href='css/about.css')
-
 block content
-    // HEADER 
+    header.header.header--bg-about
+        .header__logo-box
+            img.header__logo(src="img/logo-white.png" alt="logo")
 
-    .background-about 
-        .blur-about
-            include __header
-            .whySection.section
-                h1 WHY WE'RE HERE 
-                h6 We believe in augmenting human intelligence, not replacing it.
+        .section-about-us
+            .bg-video
+                video.bg-video__content(autoplay muted loop)
+                    <source src="img/video.mp4" type="video/mp4">
+                    <source src="img/video.webm" type="video/webm">
+                    Your browser is not supported!
 
-                .row.description 
-                    .col-6
-                        p Dynamic Object Language Labs, Inc. was established in 1993 to promote the synergistic 
-                            | combination of Dynamic and Open Languages, Object Oriented Programming, and Artificial 
-                            | Intelligence.  
+            .u-center-text.u-margin-bottom-big
+                h2.heading-secondary.heading-secondary--dark Why We're Here
 
-                        p We conduct advanced research and development aimed at providing a brighter 
-                            | and safer future through advances in computer based technology and its application to 
-                            | real world problems.  DOLL’s central theme is to approach complex problems from a domain 
-                            | specific language perspective. 
-                    .col-6
-                        p Our research interests include Advanced Languages, 
-                            | Artificial Intelligence, Computer Vision, Planning, Cyber Security, and Expert Systems.  
-                            | DOLL has a long history of exciting work in Self Adaptive Software, a software architecture 
-                            | concept that DOLL helped introduce in the 1990's. 
-                        p Self Adaptive Software has been used to 
-                            | build robust vision systems, intelligent spaces/rooms, intelligent control systems, 
-                            | and cyber security systems. DOLL is currently performing on multiple projects in the area 
-                            | of cyber security, including self adaptive and game theoretic approaches.
+            .row
+                .col-1-of-2
+                    p.paragraph 
+                        |Dynamic Object Language Labs, Inc. was established in 1993 to promote the synergistic 
+                        |combination of Dynamic and Open Languages, Object Oriented Programming, and Artificial Intelligence.
 
-    .ourTeamSection.section  
-        p Thao Phuong 
-        p Paul Robertson 
+                    p.paragraph 
+                        |We conduct advanced research and development aimed at providing a brighter and safer 
+                        |future through advances in computer based technology and its application to real world problems. 
+                        |DOLL’s central theme is to approach complex problems from a domain specific language perspective.
+
+                .col-1-of-2
+                    p.paragraph 
+                        |Our research interests include Advanced Languages, Artificial Intelligence, Computer Vision, Planning, 
+                        |Cyber Security, and Expert Systems. DOLL has a long history of exciting work in Self Adaptive Software, 
+                        |a software architecture concept that DOLL helped introduce in the 1990's.
+
+                    p.paragraph 
+                        |Self Adaptive Software has been used to build robust vision systems, intelligent spaces/rooms, 
+                        |intelligent control systems, and cyber security systems. DOLL is currently performing on multiple 
+                        |projects in the area of cyber security, including self adaptive and game theoretic approaches.
+
+    section.section-features
+        .u-center-text.u-margin-bottom-big
+            h2.heading-secondary.heading-secondary--white Where we're going
+        .row
+            .col-1-of-4
+                .feature-box
+                    <i class="feature-box__icon icon-basic-world"></i>
+                    h3.heading-tertiary.u-margin-bottom-small Decentralized Finance
+                    p.feature-box__text
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+            .col-1-of-4
+                .feature-box
+                    i.feature-box__icon.icon-basic-clessidre
+                    h3.heading-tertiary.u-margin-bottom-small Reduce Hackers
+                    p.feature-box__text
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+            .col-1-of-4
+                .feature-box
+                    i.feature-box__icon.icon-basic-rss
+                    h3.heading-tertiary.u-margin-bottom-small Give back
+                    p.feature-box__text
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+            .col-1-of-4
+                .feature-box
+                    i.feature-box__icon.icon-basic-watch
+                    h3.heading-tertiary.u-margin-bottom-small A.I. and Teamwork 
+                    p.feature-box__text
+                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
 
 
-    .futureGoalsSection.section 
-        h1 WHERE WE'RE GOING 
+    section.section-tours
+        .u-center-text.u-margin-bottom-big
+            h2.heading-secondary Meet the team
+        .row
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--1
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--1 Dr. Paul Robertson
+                        .card__details
+                            <ul> <li>Chief Scientist, President</li> </ul>
+                    .card__side.card__side--back.card__side--back-1
+                        //-  cta = call to action 
+                        .card__cta 
+                            .card__price-box
+                                p.card__description
+                                    | Dr. Robertson, is working to apply self-adaptive software and machine learning principles to Computer Vision, 
+                                    | and Perceptual Intelligence. His current research activities include self adaptive software architectures and technology, 
+                                    | symbolic learning systems, perceptually enabled interfaces, physically embedded intelligent autonomous systems 
+                                    | ,and advanced programming language environments and design. 
+                                    | He was recently a senior scientist at Raytheon BBN Technologies.
+                                    | He was a research scientist at the M.I.T Computer Science and Artificial Intelligence Laboratory (CSAIL)
+                                    | He has worked on several DARPA funded programs, including IL, SRS, ANTS, SAFER, and EDCS. He was PI on SAFER and EDCS.
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--2
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--2 Prakash Manghwani
+                        .card__details
+                            <ul><li>Senior Architect</li></ul>
+                    .card__side.card__side--back.card__side--back-2
+                        .card__cta 
+                            .card__price-box
+                                p.card__description 
+                                    |Before coming to DOLL, Prakash worked as a software engineer at PepperMob 
+                                    |and before that as a software engineer at Raytheon BBN Technologies.  
+                                    |Where he worked on Concurrent High performance applications development,  
+                                    |Semantic Web Technologies,  Scalable, fast fault tolerant node failure detection, 
+                                    |program composition for embedded systems, Sensor information technologies, 
+                                    |and Open map design and implementation. Prakash holds a Bachelor of Science in Computer Engineering.
+
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--3
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--3 Dan Cerys
+                        .card__details
+                            <ul><li>Chief Architect</li></ul>
+                    .card__side.card__side--back.card__side--back-3
+                        .card__cta 
+                            .card__price-box
+                                p.card__description 
+                                    |Dan is an experienced software development leader with experience
+                                    | ranging from DARPA R&D programs to delivering mission-critical
+                                    | applications used daily by thousands of users.
+                                    | He has successfully implemented practical state-of-the-art computer
+                                    | systems in a variety of problem domains, particularly in areas of 
+                                    | logistics and cyber security.  Technical interests include: planning
+                                    | and scheduling; user interfaces that distill large-scale, multi-attribute
+                                    | data into actionable information; knowledge representation; and distributed
+                                    | object-oriented systems.
+        .row
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--1
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--1 Thao Phuong
+                        .card__details
+                            <ul> <li>Software Developer</li> </ul>
+                    .card__side.card__side--back.card__side--back-1
+                        //-  cta = call to action 
+                        .card__cta 
+                            .card__price-box
+                                p.card__description
+                                    | Dr. Robertson, is working to apply self-adaptive software and machine learning principles to Computer Vision, 
+                                    | and Perceptual Intelligence. His current research activities include self adaptive software architectures and technology, 
+                                    | symbolic learning systems, perceptually enabled interfaces, physically embedded intelligent autonomous systems 
+                                    | ,and advanced programming language environments and design. 
+                                    | He was recently a senior scientist at Raytheon BBN Technologies.
+                                    | He was a research scientist at the M.I.T Computer Science and Artificial Intelligence Laboratory (CSAIL)
+                                    | He has worked on several DARPA funded programs, including IL, SRS, ANTS, SAFER, and EDCS. He was PI on SAFER and EDCS.
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--2
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--2 Bob Laddaga
+                        .card__details
+                            <ul><li>Software Engineer</li></ul>
+                    .card__side.card__side--back.card__side--back-2
+                        .card__cta 
+                            .card__price-box
+                                p.card__description 
+                                    |Before coming to DOLL, Prakash worked as a software engineer at PepperMob 
+                                    |and before that as a software engineer at Raytheon BBN Technologies.  
+                                    |Where he worked on Concurrent High performance applications development,  
+                                    |Semantic Web Technologies,  Scalable, fast fault tolerant node failure detection, 
+                                    |program composition for embedded systems, Sensor information technologies, 
+                                    |and Open map design and implementation. Prakash holds a Bachelor of Science in Computer Engineering.
+
 
 

@@ -1,0 +1,204 @@
+extends base
+
+block content
+    header.header.header--bg-home
+        .header__logo-box
+            img.header__logo(src="img/logo-white.png" alt="logo")
+
+        .header__text-box
+            h1.heading-primary
+                <span class="heading-primary--main">Artificial Intelligence</span>
+                <span class="heading-primary--sub">We believe in embracing human intelligence via technology, not replacing it.</span>
+
+            a.btn.btn--white.btn--animated(href="/construction") Discover
+
+    main
+        section.section-about
+            .u-center-text.u-margin-bottom-big
+                h2.heading-secondary Our solutions
+            .row
+                .col-2-of-3
+                    h3.heading-tertiary.u-margin-bottom-small Active Perception
+                    p.paragraph 
+                        |Active perception draws on models to inform context-dependent tuning of sensors,
+                        |direct sensors towards phenomena of greatest interest, to follow up initial alerts 
+                        |from cheap, inaccurate sensors with targeted use of expensive, accurate sensors, 
+                        |and to intelligently combine results from sensors with context information to produce increasingly accurate results.
+
+                    h3.heading-tertiary.u-margin-bottom-small Mission modeling
+                    p.paragraph
+                        |Motivated by the world of military planning, we use the term Mission Modeling to refer 
+                        |to the activity of capturing and representing all of the goals, preferences, and constraints, 
+                        |along with the detailed execution plan that satisfies each of them. DOLL's specification-based 
+                        |mission modeling approach supports the top-down generation of detailed interdependent activity plans, 
+                        |an execution mechanism that ensures that all activities are performed in the correct order, and provides 
+                        |continuous assessment of the status of all subparts of the plan along with the aggregate status of the overall mission. 
+                    h3.heading-tertiary.u-margin-bottom-small Cyber Security
+                    p.paragraph
+                        |DOLL has developed active cyberdefense systems, and has evaluated these systems on testbeds 
+                        |that are able to simulate a variety of cyberattacks including denial of service, corruption through malware, 
+                        |exfiltration, and process termination.  DOLL's approach is intelligent and dynamic in that it treats an 
+                        |attack as a battle for which defensive missions must be planned, and analysis and compensation 
+                        |resources must be allocated in an optimal manner.  Thus, the approach leverages DOLL's Mission Modeling technology.
+
+                    a.btn-text(href="/construction") Learn more &rarr;
+                .col-1-of-3
+                    .composition
+                        <img src="img/activePerception.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                        <img src="img/missionModeling.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                        <img src="img/cyberSecurity.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+
+
+        .section-stories
+            .bg-video
+                video.bg-video__content(autoplay muted loop)
+                    <source src="img/video.mp4" type="video/mp4">
+                    <source src="img/video.webm" type="video/webm">
+                    Your browser is not supported!
+            .u-center-text.u-margin-bottom-big
+                h2.heading-secondary Latest Updates from DOLL
+            .row
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/news1.jpg" alt="place holder")
+                        figcaption.story__caption Read more &rarr;
+
+                    .story__text
+                        h3.heading-tertiary.u-margin-bottom-small DOLL/Vencore wins CHASE
+                        p.feature-box__text
+                            em Publisher Name — February 8, 2021
+                        p.feature-box__text
+                            | Representative Jamie Raskin, the lead prosecution lawyer in former President Trump’s 
+                            | second impeachment trial, spoke of seeing terrified colleagues.
+            .row 
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/news2.jpg" alt="place holder")
+                        figcaption.story__caption Read more &rarr;
+
+                    .story__text
+                        h3.heading-tertiary.u-margin-bottom-small DOLL/Vanderbilt University wins CASE
+                        p.feature-box__text
+                            em Publisher Name — February 8, 2021
+                        p.feature-box__text
+                            | Representative Jamie Raskin, the lead prosecution lawyer in former President Trump’s 
+                            | second impeachment trial, spoke of seeing terrified colleagues.
+            .row 
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/news3.jpg" alt="place holder")
+                        figcaption.story__caption Read more &rarr;
+
+                    .story__text
+                        h3.heading-tertiary.u-margin-bottom-small DOLL/Vanderbilt University wins CASE
+                        p.feature-box__text
+                            em Publisher Name — February 8, 2021
+                        p.feature-box__text
+                            | Representative Jamie Raskin, the lead prosecution lawyer in former President Trump’s 
+                            | second impeachment trial, spoke of seeing terrified colleagues.
+
+
+            .u-center-text.u-margin-top-huge
+                a.btn-text(href="/construction") Read all stories &rarr;
+
+
+    //- // HEADER 
+    //- .section1 
+    //-     .background
+    //-         .blur
+    //-             include __header
+
+    //-             .introduction 
+    //-                 h1 CONTEXT TUNING.
+    //-                 p nform context-dependent tunin 
+    //-                 p.space edsrs towards ph hours.
+    //-                 .button 
+    //-                     a.btn(href="/") Learn more 
+
+    //- //- Each section2 is a solution 
+    //- .section2 
+    //-     .d-flex.justify-content-center 
+    //-         h1 Active Perception
+
+    //-     .description 
+    //-         p.pb-3 Active perception draws on models to inform context-dependent tuning of sensors, 
+    //-             | direct sensors towards phenomena of greatest interest, to follow up initial alerts 
+    //-             | from cheap, inaccurate sensors with targeted use of expensive, accurate sensors, 
+    //-             | and to intelligently combine results from sensors with context information to 
+    //-             | produce increasingly accurate results. The model-based approach deploys sensors 
+    //-             | to build structured interpretations of situations to meet mission-centered decision making requirements.
+
+    //-         h4 Real-world applications
+
+    //-         .row.d-flex.justify-content-center
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-american-sign-language-interpreting.icon-size
+    //-                 p Contrary to popular belief
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-shield-alt.icon-size
+    //-                 p Lorem Ipsum is not simply random text
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-file-signature.icon-size
+    //-                 p It has roots in a piece of classica.
+
+    //- .section2.mm
+    //-     .d-flex.justify-content-center 
+    //-         h1 Mission modeling
+
+    //-     .description 
+    //-         p.pb-3 Active perception draws on models to inform context-dependent tuning of sensors, direct sensors towards phenomena of greatest interest, to follow up initial alerts from cheap, inaccurate sensors with targeted use of expensive, accurate sensors, and to intelligently combine results from sensors with context information to produce increasingly accurate results. The model-based approach deploys sensors to build structured interpretations of situations to meet mission-centered decision making requirements.
+    //-         h4 Real-world applications
+
+    //-         .row.d-flex.justify-content-center
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-american-sign-language-interpreting.icon-size
+    //-                 p Contrary to popular belief
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-shield-alt.icon-size
+    //-                 p Lorem Ipsum is not simply random text
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-file-signature.icon-size
+    //-                 p It has roots in a piece of classica.
+
+    //- .section2
+    //-     .d-flex.justify-content-center 
+    //-         h1 Mission modeling
+
+    //-     .description 
+    //-         p.pb-3 Active perception draws on models to inform context-dependent tuning of sensors, direct sensors towards phenomena of greatest interest, to follow up initial alerts from cheap, inaccurate sensors with targeted use of expensive, accurate sensors, and to intelligently combine results from sensors with context information to produce increasingly accurate results. The model-based approach deploys sensors to build structured interpretations of situations to meet mission-centered decision making requirements.
+    //-         h4 Real-world applications
+
+    //-         .row.d-flex.justify-content-center
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-american-sign-language-interpreting.icon-size
+    //-                 p Contrary to popular belief
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-shield-alt.icon-size
+    //-                 p Lorem Ipsum is not simply random text
+    //-             .col-4.flex-column.justify-content-center
+    //-                 i.fas.fa-file-signature.icon-size
+    //-                 p It has roots in a piece of classica.
+
+
+    //- .section3
+    //-     h3 Latest News
+
+    //-     .news
+    //-         a(aria-current="page" href="/construction") Palantir Wins FDA Contract to Power Drug Review, Inspections
+    //-         p Bloomberg - December 7, 2020
+
+    //-         a(aria-current="page" href="/construction") Palantir Wins FDA Contract to Power Drug Review, Inspections
+    //-         p Bloomberg - December 7, 2020
+
+    //-         a(aria-current="page" href="/construction") Palantir Wins FDA Contract to Power Drug Review, Inspections
+    //-         p Bloomberg - December 7, 2020
+
+    //-         a(aria-current="page" href="/construction") Palantir Wins FDA Contract to Power Drug Review, Inspections
+    //-         p Bloomberg - December 7, 2020
+
+    //-     .button 
+    //-         a.btn(href="/") Read more news
+
+
+
+

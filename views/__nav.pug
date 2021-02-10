@@ -1,0 +1,53 @@
+//- header.header
+//-     nav.navbar.navbar-expand-lg.navbar-dark.transparent
+//-         .container-fluid
+//-             a.navbar-brand(href="/")
+//-                 img.d-inline-block.align-top.logoSize(src="/img/logo-white.png" alt="" width="150vw" height=auto) 
+
+//-             // Hamburger button
+//-             button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+//-                 span.navbar-toggler-icon
+
+//-             .collapse.navbar-collapse#navbarSupportedContent.drop-down 
+//-                 ul.navbar-nav.w-100.justify-content-end
+//-                     li.nav-item
+//-                         a.nav-link(aria-current="page" href="/about") About
+
+//-                     li.nav-item
+//-                         a.nav-link(href="/construction") Projects
+
+//-                     li.nav-item
+//-                         a.nav-link(href="/construction") Solutions
+
+//-                     li.nav-item
+//-                         a.nav-link(href="/construction") Careers 
+
+//-                     li.nav-item.dropdown
+//-                         a.nav-link.dropdown-toggle(href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false")
+//-                             Dropdown Newsroom
+//-                                 ul.dropdown-menu(aria-labelledby="navbarDropdownMenuLink")
+//-                                     li
+//-                                         a.dropdown-item(href="/construction") Press Releases
+//-                                         a.dropdown-item(href="/construction") Blog
+//-                                         a.dropdown-item(href="/construction") Publication
+//-                     li.nav-item
+//-                         a.nav-link(href="/construction") Contact
+
+<div class="navigation">
+    <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+    <label for="navi-toggle" class="navigation__button">
+        <span class="navigation__icon">&nbsp;</span>
+    </label>
+    <div class="navigation__background">&nbsp;</div>
+
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item"><a href="/" class="navigation__link">Home</a></li>
+            <li class="navigation__item"><a href="/about" class="navigation__link">About</a></li>
+            <li class="navigation__item"><a href="/construction" class="navigation__link">Solutions</a></li>
+            <li class="navigation__item"><a href="/construction" class="navigation__link">Careers</a></li>
+            <li class="navigation__item"><a href="/construction" class="navigation__link">Newsroom</a></li>
+            <li class="navigation__item"><a href="/construction" class="navigation__link">Contact</a></li>
+        </ul>
+    </nav>
+</div>
