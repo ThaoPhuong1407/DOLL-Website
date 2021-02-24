@@ -5,13 +5,13 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.15;
   overflow: hidden;
-  filter: brightness(90%);
+  background-size: cover;
+  background-position: top;
 
-  &__content {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.6),
+    rgba($color-primary-dark, 0.6)
+  );
 }

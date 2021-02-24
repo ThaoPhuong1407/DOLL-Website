@@ -2,24 +2,26 @@ doctype html
 html  
     head 
         title DOLL 
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        link(href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet")
 
-        link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
-        link(href="https://fonts.googleapis.com/css2?family=Oxanium:wght@558&display=swap" rel="stylesheet")
-        link(href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Poppins:wght@300&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="css/icon-font.css")
+        link(rel='stylesheet' href='css/style.css')
         link(rel="shortcut icon" type="image/png" href="img/favicon.png")
 
         //- More stuffs
         block styles
-        link(rel="stylesheet" href="css/icon-font.css")
-        link(rel='stylesheet' href='css/style-sass.css')
 
     body    
         include __nav
 
         // CONTENT
         block content  
-            h1 This is a placeholder heading
 
         include __footer
+
+
+
+
+

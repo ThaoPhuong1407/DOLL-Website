@@ -3,62 +3,57 @@ extends base
 block content
     header.header.header--bg-about
         .header__logo-box
-            img.header__logo(src="img/logo-white.png" alt="logo")
+            img.header__logo(src="img/logo_white_doll.png" alt="logo")
 
         .section-about-us
-            .bg-video
-                video.bg-video__content(autoplay muted loop)
-                    <source src="img/video.mp4" type="video/mp4">
-                    <source src="img/video.webm" type="video/webm">
-                    Your browser is not supported!
+            .text-box
+                .u-center-text.u-margin-bottom-big
+                    h2.heading-secondary.heading-secondary--dark.color-white  Why We're Here
 
-            .u-center-text.u-margin-bottom-big
-                h2.heading-secondary.heading-secondary--dark Why We're Here
+                .row
+                    .col-1-of-2
+                        p.paragraph.color-white  
+                            |Dynamic Object Language Labs, Inc. was established in 1993 to promote the synergistic 
+                            |combination of Dynamic and Open Languages, Object Oriented Programming, and Artificial Intelligence.
 
-            .row
-                .col-1-of-2
-                    p.paragraph 
-                        |Dynamic Object Language Labs, Inc. was established in 1993 to promote the synergistic 
-                        |combination of Dynamic and Open Languages, Object Oriented Programming, and Artificial Intelligence.
+                        p.paragraph.color-white  
+                            |We conduct advanced research and development aimed at providing a brighter and safer 
+                            |future through advances in computer based technology and its application to real world problems. 
+                            |DOLL’s central theme is to approach complex problems from a domain specific language perspective.
 
-                    p.paragraph 
-                        |We conduct advanced research and development aimed at providing a brighter and safer 
-                        |future through advances in computer based technology and its application to real world problems. 
-                        |DOLL’s central theme is to approach complex problems from a domain specific language perspective.
+                    .col-1-of-2.u-margin-bottom-big 
+                        p.paragraph.color-white  
+                            |Our research interests include Advanced Languages, Artificial Intelligence, Computer Vision, Planning, 
+                            |Cyber Security, and Expert Systems. DOLL has a long history of exciting work in Self Adaptive Software, 
+                            |a software architecture concept that DOLL helped introduce in the 1990's.
 
-                .col-1-of-2
-                    p.paragraph 
-                        |Our research interests include Advanced Languages, Artificial Intelligence, Computer Vision, Planning, 
-                        |Cyber Security, and Expert Systems. DOLL has a long history of exciting work in Self Adaptive Software, 
-                        |a software architecture concept that DOLL helped introduce in the 1990's.
+                        p.paragraph.color-white  
+                            |Self Adaptive Software has been used to build robust vision systems, intelligent spaces/rooms, 
+                            |intelligent control systems, and cyber security systems. DOLL is currently performing on multiple 
+                            |projects in the area of cyber security, including self adaptive and game theoretic approaches.
 
-                    p.paragraph 
-                        |Self Adaptive Software has been used to build robust vision systems, intelligent spaces/rooms, 
-                        |intelligent control systems, and cyber security systems. DOLL is currently performing on multiple 
-                        |projects in the area of cyber security, including self adaptive and game theoretic approaches.
-
-    section.section-features
+    //- section.section-future 
         .u-center-text.u-margin-bottom-big
             h2.heading-secondary.heading-secondary--white Where we're going
         .row
             .col-1-of-4
                 .feature-box
                     <i class="feature-box__icon icon-basic-world"></i>
-                    h3.heading-tertiary.u-margin-bottom-small Decentralized Finance
+                    h3.heading-tertiary.u-margin-bottom-small cyber security
                     p.feature-box__text
                         | Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
             .col-1-of-4
                 .feature-box
                     i.feature-box__icon.icon-basic-clessidre
-                    h3.heading-tertiary.u-margin-bottom-small Reduce Hackers
+                    h3.heading-tertiary.u-margin-bottom-small Productivity
                     p.feature-box__text
                         | Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
             .col-1-of-4
                 .feature-box
                     i.feature-box__icon.icon-basic-rss
-                    h3.heading-tertiary.u-margin-bottom-small Give back
+                    h3.heading-tertiary.u-margin-bottom-small Connect
                     p.feature-box__text
                         | Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
@@ -71,7 +66,7 @@ block content
                         | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
 
 
-    section.section-tours
+    section.section-tours.section-members
         .u-center-text.u-margin-bottom-big
             h2.heading-secondary Meet the team
         .row
@@ -102,7 +97,7 @@ block content
                             span.card__heading-span.card__heading-span--2 Prakash Manghwani
                         .card__details
                             <ul><li>Senior Architect</li></ul>
-                    .card__side.card__side--back.card__side--back-2
+                    .card__side.card__side--back.card__side--back-4
                         .card__cta 
                             .card__price-box
                                 p.card__description 
@@ -176,3 +171,11 @@ block content
 
 
 
+        //- .test-div-rel 
+        //-     .test-text
+        //-         p |Before coming to DOLL, Prakash worked as a software engineer at PepperMob 
+        //-             |and before that as a software engineer at Raytheon BBN Technologies.  
+        //-             |Where he worked on Concurrent High performance applications development,  
+        //-             |Semantic Web Technologies,  Scalable, fast fault tolerant node failure detection, 
+        //-             |program composition for embedded systems, Sensor information technologies, 
+        //-             |and Open map design and implementation. Prakash holds a Bachelor of Science in Computer Engineering.    

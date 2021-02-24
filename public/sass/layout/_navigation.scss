@@ -15,6 +15,16 @@
     box-shadow: 0 1rem 3rem rbga($color-black, 0.1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include respond(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   // When clicked
@@ -31,24 +41,33 @@
     );
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
     height: 100vh;
+    width: 100%;
     position: fixed;
     top: 0;
-    left: -30rem;
+    left: -5em;
     z-index: 1500;
     opacity: 0;
+    visibility: hidden;
     width: 0;
     transition: all 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   &__list {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include absCenter;
     list-style: none;
     text-align: center;
   }
@@ -92,6 +111,7 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+    visibility: visible;
     left: 0;
   }
 

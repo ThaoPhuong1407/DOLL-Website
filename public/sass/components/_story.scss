@@ -1,34 +1,42 @@
 .story {
   width: 75%;
   margin: 0 auto;
-  box-shadow: 0 3rem 9rem rgba($color-black, 0.1);
-  background-color: rgba($color-white, 0.8);
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.9);
   border-radius: 0.3rem;
   padding: 6rem;
   padding-left: 9rem;
   font-size: $default_font_size;
   transform: skewX(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0deg);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
-    background-color: orange;
     float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
-    transform: translateX(-3rem) skewX(12deg);
-    position: relative;
-    text-align: center;
-  }
+    -webkit-shape-outside: circle(
+      50% at 50% 50%
+    ); // Let text wrap around the circle
+    shape-outside: circle(50% at 50% 50%); // Let text wrap around the circle
+    transform: translateX(-3rem);
+    overflow: hidden;
+    border-radius: 50%;
 
-  &__link {
-    &:link,
-    &:visited {
-      text-decoration: none;
-      text-transform: uppercase;
-      display: inline-block;
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      -webkit-clip-path: circle(
+        50% at 50% 50%
+      ); // Make the div looks like the circle
+      clip-path: circle(50% at 50% 50%); // Make the div looks like the circle
+      border-radius: none;
     }
   }
 
@@ -39,7 +47,11 @@
   }
 
   &__text {
-    transform: skewX(12deg);
+    // transform: skewX(12deg);
+    color: $color-grey-dark;
+    @include respond(phone) {
+      transform: skewX(0deg);
+    }
   }
 
   &__caption {
