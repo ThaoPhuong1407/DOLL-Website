@@ -94,7 +94,7 @@
       background-image: linear-gradient(
           to right bottom,
           rgba($color-secondary-light, 0.15),
-          $color-secondary-dark
+          rgba($color-secondary-dark, 0.5)
         ),
         url(../img/profilePics/Paul.jpg);
     }
@@ -104,7 +104,7 @@
       background-image: linear-gradient(
           to right bottom,
           rgba($color-primary-light, 0.15),
-          $color-primary-dark
+          rgba($color-primary-dark, 0.5)
         ),
         url(../img/profilePics/Prakash.png);
       @include respond(tab-port) {
@@ -117,7 +117,7 @@
       background-image: linear-gradient(
           to right bottom,
           rgba($color-tertiary-light, 0.15),
-          $color-tertiary-dark
+          rgba($color-tertiary-dark, 0.5)
         ),
         url(../img/profilePics/Dan.png);
     }
@@ -126,8 +126,8 @@
     &--4 {
       background-image: linear-gradient(
           to right bottom,
-          rgba($color-fourth-light, 0.15),
-          $color-fourth-dark
+          rgba($color-fourth-light, 0.05),
+          rgba($color-fourth-dark, 0.5)
         ),
         url(../img/profilePics/Thao.jpg);
       @include respond(tab-port) {
@@ -140,7 +140,7 @@
       background-image: linear-gradient(
           to right bottom,
           rgba($color-tertiary-light, 0.05),
-          $color-tertiary-dark
+          rgba($color-tertiary-dark, 0.5)
         ),
         url(../img/profilePics/Bob.jpg);
     }
@@ -150,7 +150,7 @@
       background-image: linear-gradient(
           to right bottom,
           rgba($color-secondary-light, 0.15),
-          $color-secondary-dark
+          rgba($color-secondary-dark, 0.5)
         ),
         url(../img/profilePics/Victor.jpeg);
     }
@@ -160,7 +160,7 @@
       background-image: linear-gradient(
           to right bottom,
           rgba($color-secondary-light, 0.15),
-          $color-secondary-dark
+          rgba($color-secondary-dark, 0.5)
         ),
         url(../img/profilePics/Andreas.png);
     }
@@ -169,7 +169,7 @@
     &--8 {
       background-image: linear-gradient(
           to right bottom,
-          rgba($color-primary-light, 0.15),
+          rgba($color-primary-light, 0.05),
           $color-primary-dark
         ),
         url();
@@ -179,8 +179,8 @@
     &--9 {
       background-image: linear-gradient(
           to right bottom,
-          rgba($color-fourth-light, 0.15),
-          $color-fourth-dark
+          rgba($color-fourth-light, 0.05),
+          rgba($color-fourth-dark, 0.5)
         ),
         url(../img/profilePics/Heidi.jpg);
     }
@@ -189,7 +189,7 @@
     &--10 {
       background-image: linear-gradient(
           to right bottom,
-          rgba($color-primary-light, 0.15),
+          rgba($color-primary-light, 0.05),
           $color-primary-dark
         ),
         url();

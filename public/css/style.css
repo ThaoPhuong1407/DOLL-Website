@@ -415,31 +415,31 @@ body {
         margin-left: auto;
         margin-right: auto; } }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.15), #ff7730), url(../img/profilePics/Paul.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.15), rgba(255, 119, 48, 0.5)), url(../img/profilePics/Paul.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.15), #141e30), url(../img/profilePics/Prakash.png); }
+      background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.15), rgba(20, 30, 48, 0.5)), url(../img/profilePics/Prakash.png); }
       @media only screen and (max-width: 56.25em) {
         .card__picture--2 {
           background-position: bottom; } }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.15), #5643fa), url(../img/profilePics/Dan.png); }
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.15), rgba(86, 67, 250, 0.5)), url(../img/profilePics/Dan.png); }
     .card__picture--4 {
-      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.15), #28b485), url(../img/profilePics/Thao.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.05), rgba(40, 180, 133, 0.5)), url(../img/profilePics/Thao.jpg); }
       @media only screen and (max-width: 56.25em) {
         .card__picture--4 {
           background-position: bottom; } }
     .card__picture--5 {
-      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.05), #5643fa), url(../img/profilePics/Bob.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.05), rgba(86, 67, 250, 0.5)), url(../img/profilePics/Bob.jpg); }
     .card__picture--6 {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.15), #ff7730), url(../img/profilePics/Victor.jpeg); }
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.15), rgba(255, 119, 48, 0.5)), url(../img/profilePics/Victor.jpeg); }
     .card__picture--7 {
-      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.15), #ff7730), url(../img/profilePics/Andreas.png); }
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.15), rgba(255, 119, 48, 0.5)), url(../img/profilePics/Andreas.png); }
     .card__picture--8 {
-      background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.15), #141e30), url(); }
+      background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.05), #141e30), url(); }
     .card__picture--9 {
-      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.15), #28b485), url(../img/profilePics/Heidi.jpg); }
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.05), rgba(40, 180, 133, 0.5)), url(../img/profilePics/Heidi.jpg); }
     .card__picture--10 {
-      background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.15), #141e30), url(); }
+      background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.05), #141e30), url(); }
   .card__heading {
     font-size: 2.3rem;
     font-weight: 300;
