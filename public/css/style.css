@@ -437,6 +437,8 @@ body {
     .card__picture--8 {
       background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.15), #141e30), url(); }
     .card__picture--9 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.15), #28b485), url(../img/profilePics/Heidi.jpg); }
+    .card__picture--10 {
       background-image: linear-gradient(to right bottom, rgba(36, 74, 85, 0.15), #141e30), url(); }
   .card__heading {
     font-size: 2.3rem;
