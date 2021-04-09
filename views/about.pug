@@ -3,7 +3,8 @@ extends base
 block content
     header.header.header--bg-about
         .header__logo-box
-            img.header__logo(src="img/logo_white_doll.png" alt="logo")
+            a(href="/" target="")
+                img.header__logo(src="img/logo_white_doll.png" alt="logo")
 
         .section-about-us
             .text-box
@@ -32,40 +33,6 @@ block content
                             |intelligent control systems, and cyber security systems. DOLL is currently performing on multiple 
                             |projects in the area of cyber security, including self adaptive and game theoretic approaches.
 
-    //- section.section-future 
-        .u-center-text.u-margin-bottom-big
-            h2.heading-secondary.heading-secondary--white Where we're going
-        .row
-            .col-1-of-4
-                .feature-box
-                    <i class="feature-box__icon icon-basic-world"></i>
-                    h3.heading-tertiary.u-margin-bottom-small cyber security
-                    p.feature-box__text
-                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-            .col-1-of-4
-                .feature-box
-                    i.feature-box__icon.icon-basic-clessidre
-                    h3.heading-tertiary.u-margin-bottom-small Productivity
-                    p.feature-box__text
-                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-            .col-1-of-4
-                .feature-box
-                    i.feature-box__icon.icon-basic-rss
-                    h3.heading-tertiary.u-margin-bottom-small Connect
-                    p.feature-box__text
-                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-            .col-1-of-4
-                .feature-box
-                    i.feature-box__icon.icon-basic-watch
-                    h3.heading-tertiary.u-margin-bottom-small A.I. and Teamwork 
-                    p.feature-box__text
-                        | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-
-
     section.section-tours.section-members
         .u-center-text.u-margin-bottom-big
             h2.heading-secondary Meet the team
@@ -75,10 +42,10 @@ block content
                     .card__side.card__side--front
                         .card__picture.card__picture--1
                         h4.card__heading
-                            span.card__heading-span.card__heading-span--1 Dr. Paul Robertson
+                            span.card__heading-span.card__heading-span--2  Dr. Paul Robertson
                         .card__details
                             <ul> <li>Chief Scientist, President</li> </ul>
-                    .card__side.card__side--back.card__side--back-1
+                    .card__side.card__side--back.card__side--back-4
                         .card__cta 
                             .card__price-box
                                 p.card__description
@@ -113,10 +80,10 @@ block content
                     .card__side.card__side--front
                         .card__picture.card__picture--3
                         h4.card__heading
-                            span.card__heading-span.card__heading-span--3 Dan Cerys
+                            span.card__heading-span.card__heading-span--2  Dan Cerys
                         .card__details
                             <ul><li>Chief Architect</li></ul>
-                    .card__side.card__side--back.card__side--back-3
+                    .card__side.card__side--back.card__side--back-4
                         .card__cta 
                             .card__price-box
                                 p.card__description 
@@ -138,10 +105,10 @@ block content
                             span.card__heading-span.card__heading-span--2 Thao Phuong
                         .card__details
                             <ul><li>Software Developer</li></ul>
-                    .card__side.card__side--back.card__side--back-2
+                    .card__side.card__side--back.card__side--back-4
                         //-  cta = call to action 
                         .card__cta 
-                            .card__price-box
+                            .card__price-box.non-decoration
                                 p.card__description
                                     | Hi there, I'm Thao. If you want to see my past, check out my 
                                     a(href="http://www.thao-phuong.com/images/Resume.pdf") resume
@@ -161,15 +128,77 @@ block content
                     .card__side.card__side--front
                         .card__picture.card__picture--5
                         h4.card__heading
-                            span.card__heading-span.card__heading-span--1 DR. ROBERT LADDAGA
+                            span.card__heading-span.card__heading-span--2  DR. ROBERT LADDAGA
                         .card__details
                             <ul><li>Consulting Scientist</li></ul>
-                    .card__side.card__side--back.card__side--back-1
+                    .card__side.card__side--back.card__side--back-4
                         .card__cta 
                             .card__price-box
                                 p.card__description 
                                     | To be updated
 
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--6
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--2 Victor Santana
+                        .card__details
+                            <ul><li>Summer Intern 2021</li></ul>
+                    .card__side.card__side--back.card__side--back-4
+                        //-  cta = call to action 
+                        .card__cta 
+                            .card__price-box
+                                p.card__description
+                                    | To be updated
+
+        .row    
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--7
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--2 Andreas Hofmann
+                        .card__details
+                            <ul><li>Chief Scientist</li></ul>
+                    .card__side.card__side--back.card__side--back-4
+                        //-  cta = call to action 
+                        .card__cta 
+                            .card__price-box.non-decoration
+                                p.card__description
+                                    | Dr. Hofmann is a leading expert in the area of autonomous systems, particularly, in the fields of robotics, 
+                                    | cyber-physical systems, and process control systems.  
+                                    | He has been responsible for developing innovative technology and algorithms that work in real-time environments, 
+                                    | including the Gensym G2 inference engine and graphical process diagram system, algorithms for bipedal 
+                                    | robot balance control, controllers for energy efficient mobile hydraulic systems, and integrated 
+                                    | task and motion planning architectures for individual robots, and teams of robots working with humans.  
+                                    | Dr. Hofmann has a BS in Electrical Engineering from MIT, an MS in Electrical Engineering from Rennselaer Polytechnic Institute, and a Ph.D. in Computer Science from MIT.
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--8
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--2  Chirst
+                        .card__details
+                            <ul><li>Intern</li></ul>
+                    .card__side.card__side--back.card__side--back-4
+                        .card__cta 
+                            .card__price-box
+                                p.card__description 
+                                    | To be updated
+            .col-1-of-3
+                .card
+                    .card__side.card__side--front
+                        .card__picture.card__picture--9
+                        h4.card__heading
+                            span.card__heading-span.card__heading-span--2  Eddie
+                        .card__details
+                            <ul><li> Summer Intern 2020 </li></ul>
+                    .card__side.card__side--back.card__side--back-4
+                        .card__cta 
+                            .card__price-box
+                                p.card__description 
+                                    | To be updated
 
 
         //- .test-div-rel 
@@ -180,3 +209,6 @@ block content
         //-             |Semantic Web Technologies,  Scalable, fast fault tolerant node failure detection, 
         //-             |program composition for embedded systems, Sensor information technologies, 
         //-             |and Open map design and implementation. Prakash holds a Bachelor of Science in Computer Engineering.    
+
+block footer
+    include __footer

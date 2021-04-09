@@ -9,8 +9,7 @@ app.set('view engine', 'pug'); // Express framework supports pug template
 app.set('views', path.join(__dirname, 'views'));
 
 // Serving static files from the public folders
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(path.join(__dirname, 'public/')));
 
 app.get('/', (req, res)=> {
     res.status(200).render('home', {
@@ -20,6 +19,37 @@ app.get('/', (req, res)=> {
 
 app.get('/about', (req, res)=> {
     res.status(200).render('about', {
+        test: 'Thao Phuong',
+    });
+});
+
+app.get('/contact', (req, res)=> {
+    res.status(200).render('contact', {
+        test: 'Thao Phuong',
+    });
+});
+
+app.get('/newsandprojects', (req, res)=> {
+    res.status(200).render('newsandprojects', {
+        test: 'Thao Phuong',
+    });
+});
+
+
+app.get('/post', (req, res)=> {
+    res.status(200).render('post', {
+        test: 'Thao Phuong',
+    });
+});
+
+app.get('/post/1', (req, res)=> {
+    res.status(200).render('post1', {
+        test: 'Thao Phuong',
+    });
+});
+
+app.get('/post/2', (req, res)=> {
+    res.status(200).render('post2', {
         test: 'Thao Phuong',
     });
 });

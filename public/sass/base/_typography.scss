@@ -39,6 +39,19 @@ body {
       font-size: 3rem;
     }
   }
+
+  &--title {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1.2rem;
+    animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+      font-size: 3rem;
+    }
+  }
 }
 
 .heading-secondary {
@@ -57,6 +70,10 @@ body {
   );
   -webkit-background-clip: text; // Make the background-color to only cover the text area
   background-clip: text;
+
+  &--white {
+    color: white;
+  }
 
   @include respond(tab-port) {
     font-size: 3rem;

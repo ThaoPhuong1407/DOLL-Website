@@ -1,0 +1,460 @@
+extends base
+
+block content
+    header.header.header--bg-contact
+        .header__logo-box
+            a(href="/" target="")
+                img.header__logo(src="img/logo_white_doll.png" alt="logo")
+
+        .section-future.projects 
+            .u-center-text.u-margin-bottom-big
+                h2.heading-secondary.heading-secondary--white Projects
+            .row
+                .col-1-of-3
+                    .feature-box
+                        i.feature-box__icon.icon-basic-paperplane
+                        //- https://www.youtube.com/watch?v=A32p24rTe4Y
+                        h3.heading-tertiary.u-margin-bottom-small Pamela
+                        p.feature-box__text
+                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+
+                .col-1-of-3
+                    .feature-box
+                        i.feature-box__icon.icon-basic-lightbulb
+                        h3.heading-tertiary.u-margin-bottom-small CART
+                        p.feature-box__text
+                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+
+                .col-1-of-3
+                    .feature-box
+                        i.feature-box__icon.icon-basic-settings
+                        h3.heading-tertiary.u-margin-bottom-small DCRYP
+                        p.feature-box__text
+                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+
+            .row
+                .col-1-of-3
+                    .feature-box
+                        i.feature-box__icon.icon-basic-settings
+                        h3.heading-tertiary.u-margin-bottom-small PAC2MAN
+                        p.feature-box__text
+                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+
+                .col-1-of-3
+                    .feature-box
+                        i.feature-box__icon.icon-basic-target
+                        h3.heading-tertiary.u-margin-bottom-small ADAM
+                        p.feature-box__text
+                            | On going project -- to be updated
+                        //- a.btn-text.u-margin-top-medium(href="/post") Learn more &rarr;
+
+                .col-1-of-3
+                    .feature-box
+                        i.feature-box__icon.icon-basic-world
+                        h3.heading-tertiary.u-margin-bottom-small RITA
+                        p.feature-box__text
+                            | On going project -- to be updated
+                        //- a.btn-text.u-margin-top-medium(href="/post") Learn more &rarr;
+
+        .section-future.news#press
+            .u-center-text.u-margin-bottom-medium
+                h2.heading-secondary.green Press Release
+
+            .news-tab
+                a(href="/post/2")
+                    h2 DOLL Inaugurates a New Robot Laboratory To Study Developmental Learning
+                    p A new research and educational partnership with UCLy-ESQESE (Catholic University of Lyon) has been established to further the joint, machine learning for robotics,  research goal
+
+            .news-tab
+                a(href="/post/1")
+                    h2 DOLL Inaugurates a New Robot Laboratory To Study Developmental Learning
+                    p  The new laboratory, L.A.I.R., Laboratory for Affective andIndependent Robotics, is a space where robots can learn by exploring their environment.
+
+        .section-stories#updates
+            //- .bg-video
+            .u-center-text.u-margin-bottom-big
+                h2.heading-secondary.green DOLL's News
+            .row
+                .story
+                    figure.story__shape.u-margin-right-small 
+                        img.story__img(src="img/News2.jpg" alt="place holder")
+
+                    .story__text.non-decoration
+                        h3.heading-tertiary.u-margin-bottom-small DOLL/Vencore wins CHASE
+                        p.feature-box__text
+                            em DOLL — 2018
+                        p.feature-box__text
+                            | DOLL and MIT will subcontract to Vencore Labs on WILEE, a set of components for Threat Detection and Characterization as part of DARPA I2O's CHASE program. Scaling the Cyber Hunt problem poses several key technical challenges. Detecting and characterizing cyber threats at scale in large enterprise networks is hard because of the vast quantity and complexity of the data that must be analyzed as adversaries deploy varied and evolving tactics to accomplish their goals. WILEE's Threat Detector accelerates the hunt process by translating high-level threat descriptions into many possible concrete implementations and using adversarial planning, genetic perturbation, and data-driven evaluation to automatically prioritize hunt activities, inform data collection, minimize detection time, and detect both known and novel malicious activities with high confidence. WILEE's threat interpretation and validation process lowers the cognitive burden on Cyber Protection Team (CPT) hunt operators by producing validated threat indicators in human-readable form, alongside a continuous confidence score to assist in triaging and prioritizing responses when operating with limited resources.
+            .row 
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/News2.jpg" alt="place holder")
+
+                    .story__text.non-decoration
+                        h3.heading-tertiary.u-margin-bottom-small DOLL/Vanderbilt University wins CASE
+                        p.feature-box__text
+                            em DOLL — 2018
+                        p.feature-box__text
+                            | DOLL will subcontract to Vanderbilt University to develop DCRYPPS on the DARPA CASE program. DCRYPPS (Deriving Cyber-security Requirements Yielding Protected Physical Systems) will help automate the design and implementation of cyber physical systems (CPS) to meet stringent cyber security requirements, without sacrificing functional performance, maintaining timing and cost constraints. The system will help derive the cyber security requirements, using model based diagnosis, cyber physical properties and cyber physical attack models, analysis of cyber requirements, and use of probabilistic certificates in managing cyber security requirements.
+
+            .row 
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/News2.jpg" alt="place holder")
+
+                    .story__text.non-decoration
+                        h3.heading-tertiary.u-margin-bottom-small DOLL/SIFT wins CPS
+                        p.feature-box__text
+                            em DOLL — 2018
+                        p.feature-box__text
+                            | DOLL will subcontract to SIFT on the Creative Problem Solver (CPS) program, designing a system that will be able to generate and validate out-of-the-box approaches to a variety of difficult planning problems.  DOLL will begin its work on the program by designing a detailed simulation of some of the challenging problems described in Andy Weir's book, The Martian.
+
+            .row 
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/News2.jpg" alt="place holder")
+
+                    .story__text.non-decoration
+                        h3.heading-tertiary.u-margin-bottom-small DOLL Team Demonstrates CART Robot-Assisted Repair Technology
+                        p.feature-box__text
+                            em DOLL — 2018
+                        p.feature-box__text.non-decoration
+                            | Developed under DARPA funding, DOLL has developed the capability for a robot assistant to guide a user in performing repair tasks using deep learning, active perception, mission representation, and plan recognition.  This video shows a user performing a simple repair operation consisting of replacing the battery of a cell phone, assisted by the CART system.
+                            a(href="/https://www.youtube.com/watch?v=4dzz3Q1r55s")
+                                p Link to the YouTube Video
+
+            .row 
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/News2.jpg" alt="place holder")
+
+                    .story__text.non-decoration
+                        h3.heading-tertiary.u-margin-bottom-small DOLL wins phase I SBIR for hardware supported fast path planning for robots
+                        p.feature-box__text
+                            em DOLL — 2017
+                        p.feature-box__text
+                            | Under this contract we will develop RAPID (Roadmap-based Accelerated Planning with Integrated Dynamics). The system will produce motion plans quickly, and it will also produce motion plans that permit fast, agile motion for dynamic robot mechanisms.
+
+            .row 
+                .story
+                    figure.story__shape
+                        img.story__img(src="img/News2.jpg" alt="place holder")
+
+                    .story__text.non-decoration
+                        h3.heading-tertiary.u-margin-bottom-small DOLL wins Phase II STTR for its CART project with MIT
+                        p.feature-box__text
+                            em DOLL — 2016
+                        p.feature-box__text
+                            | In Phase II, DOLL will develop an integrated system that, based on a PAMELA-based mission plan for a detailed repair plan, will continuously observe the actions of the human performing the repair task.  DOLL will develop a machine-learning-based object detector that will dynamically determine the state and position of each of the items involved in the repair task, along with the state of the human's hands.  We will develop a belief state estimator that will make sense of these observations and determine their context and progress within the mission plan for the repair. In order to provide mixed-initiative guidance to the user, we will develop a voice interaction capability that will inform the user of the completion of each major step in the repair, inform the user of any mistakes, and allow the user to ask questions about their progress.
+
+            div#more
+                .row 
+                    .story
+                        figure.story__shape
+                            img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL wins DARPA Distributed Autonomous Network Communication Enabler (DANCE) contract to develop autonomous quad-copter network
+                            p.feature-box__text
+                                em DOLL — 2016
+                            p.feature-box__text
+                                | DANCE will feature a self-organizing team of quadcopters (or a combination of quadcopters, unmanned winged aircraft, and ground robots) that implement a dynamic, ad hoc communication network that is robust to attacks and disturbances. These unmanned vehicles will be controlled by a mesh of automated distributed planners, guided by mission models.
+
+                .row 
+                    .story
+                        figure.story__shape
+                            img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL was awarded a DARPA seedling to design and develop tools for military mission modeling
+                            p.feature-box__text
+                                em DOLL — 2016
+                            p.feature-box__text
+                                | This will leverage the PAMELA model representation to generate detailed Hierarchical Task Networks (HTNs) and Temporal Plan Networks (TPNs) that capture Commander’s Intent along with all of the actionable details of the mission plan.  In addition, we will compare and reconcile classical computer science focused planning with military planning.
+
+
+                .row 
+                    .story
+                        figure.story__shape
+                            img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL team presents on PAMELA and PLANVIZ at Clojure/Conj
+                            p.feature-box__text
+                                em DOLL — 2016
+                            p.feature-box__text
+                                | DOLL team presents a session and a demonstration of 
+                                a(href="https://web.archive.org/web/20201108183940/https://github.com/dollabs/pamela") PAMELA 
+                                | and PLANVIZ for machine learning at 
+                                a(href="https://www.youtube.com/watch?v=i84i1X9k8_g") Clojure/Conj 2016.
+
+
+                .row  
+                    .story
+                        figure.story__shape
+                            img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL team presents on PAMELA and PLANVIZ at Clojure West
+                            p.feature-box__text
+                                em DOLL — 2016
+                            p.feature-box__text
+                                | DOLL team presents a session and an unsession on PAMELA and PLANVIZ at 
+                                a(href="https://github.com/clojurewest/clojurewest2016") Clojure/west.
+
+                .row 
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL/Vanderbilt University PAC2MAN as part of the DARPA EDGE-CT program
+                            p.feature-box__text
+                                em DOLL — 2015
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL will collaborate with MIT on a DARPA funded STTR contract called CART
+                            p.feature-box__text
+                                em DOLL — 2015
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL Welcomes Dan Cerys to DOLL as Chief Architect
+                            p.feature-box__text
+                                em DOLL — 2014
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL Welcomes Andreas Hofmann to DOLL as Chief Scientist
+                            p.feature-box__text
+                                em DOLL — 2014
+                            p.feature-box__text
+
+                .row 
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL received a DARPA Phase II SBIR contract for a project called PAMELA
+                            p.feature-box__text
+                                em DOLL — 2014
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL and SIFT were awarded a DARPA seedling to explore active perception (Goshawk)
+                            p.feature-box__text
+                                em DOLL — 2014
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL/Applied Communications Sciences/Kestrel Institute PLANX
+                            p.feature-box__text
+                                em DOLL — 2013
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL Chief Scientist Robert Laddaga leaves DOLL to work at Vanderbilt
+                            p.feature-box__text
+                                em DOLL — July 2013
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL welcomes Grace Robertson to DOLL as director of administration
+                            p.feature-box__text
+                                em DOLL — 2012
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL moves into new officess located in Lexington Massachusetts
+                            p.feature-box__text
+                                em DOLL — 2012
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL moves into new officess located in Lexington Massachusetts
+                            p.feature-box__text
+                                em DOLL — 2012
+                            p.feature-box__text
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL Chief Scientist Robert Laddaga is Co-Organizer of the Adaptive Host and Network Security Workshop at SASO
+                            p.feature-box__text
+                                em DOLL — 2012
+                            p.feature-box__text
+
+                .row 
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL Chief Scientist Paul Robertson is Co-General Chair of SASO 2012
+                            p.feature-box__text
+                                em DOLL — 2012
+                            p.feature-box__text
+
+                .row
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL will work with MIT on their IARPA funded "StoneSoup" contract
+                            p.feature-box__text
+                                em DOLL — 2011
+                            p.feature-box__text
+
+                .row
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL will subcontract to SIFT on a recently funded DARPA MRC project called STRATUS
+                            p.feature-box__text
+                                em DOLL — 2011
+                            p.feature-box__text
+
+                .row
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL will subcontract to Applied Communications Sciences on a recently funded DARPA MRC project called ACCORD
+                            p.feature-box__text
+                                em DOLL — 2011
+                            p.feature-box__text
+
+                .row
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL Welcomes Prakash Manghwani to DOLL as senior architect
+                            p.feature-box__text
+                                em DOLL — 2011
+                            p.feature-box__text
+
+                .row
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL wins a DARPA seedling contract under the CRASH program: MARS
+                            p.feature-box__text
+                                em DOLL — 2010
+                            p.feature-box__text
+
+                .row
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small Franz Inc and DOLL Inc win DARPA SBIR
+                            p.feature-box__text
+                                em DOLL — 1998
+                            p.feature-box__text
+                                | Smart Components: A High Level Semantically Based User Interface Management Tool for Distributed Applications: DARPA 96-062 SBIR Award 1998
+
+                .row  
+                    .story
+                        //- figure.story__shape
+                        //-       img.story__img(src="img/News2.jpg" alt="place holder")
+
+                        .story__text.non-decoration
+                            h3.heading-tertiary.u-margin-bottom-small DOLL Inc wins DARPA award for advanced user interface capability
+                            p.feature-box__text
+                                em DOLL — 1996
+                            p.feature-box__text
+
+            .u-center-text.u-margin-top-huge
+                a.btn-text#show(href="#updates") Show more
+
+    script(src='js/showmore.js')
+
+block footer
+    include __footer
+
+
+//- Template for news if we have links
+//- .row 
+//-     .story
+//-         a.btn.btn--story(href="/construction") 
+//-             figure.story__shape
+//-                 img.story__img(src="img/News2.jpg" alt="place holder")
+//-                 figcaption.story__caption Read more &rarr;
+
+//-             .story__text
+//-                 h3.heading-tertiary.u-margin-bottom-small DOLL/Vanderbilt University wins CASE
+//-                 p.feature-box__text
+//-                     em DOLL — 2018
+//-                 p.feature-box__text
+//-                     | DOLL will subcontract to Vanderbilt University to develop DCRYPPS on the
+//-                     | DARPA CASE program. DCRYPPS (Deriving Cyber-security Requirements Yielding 
+//-                     | Protected Physical Systems) will help automate the design and implementation 
+//-                     | of cyber physical systems (CPS) to meet stringent cyber security requirements, 
+//-                     | without sacrificing functional performance, maintaining timing and cost constraints.

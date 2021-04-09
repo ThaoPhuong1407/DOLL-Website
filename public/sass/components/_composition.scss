@@ -42,6 +42,14 @@
       }
     }
 
+    &--p4 {
+      left: 2rem;
+      top: -2rem;
+      @include respond(tab-port) {
+        display: none;
+      }
+    }
+
     &:hover {
       // outline: 1.5rem solid $color-primary;
       transform: scale(1.1) translateY(-0.5rem);

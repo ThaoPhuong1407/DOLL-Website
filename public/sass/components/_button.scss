@@ -58,23 +58,22 @@
 
   &--story {
     text-transform: none !important;
-    transform: skewX(12deg);
 
     @include respond(phone) {
       transform: skewX(0deg);
     }
     &:active {
-      transform: skewX(12deg);
+      // transform: skewX(12deg);
       transform: none;
       box-shadow: none;
     }
 
     &:hover {
-      transform: skewX(12deg);
+      // transform: skewX(12deg);
       box-shadow: none;
 
       &::after {
-        transform: skewX(12deg);
+        // transform: skewX(12deg);
         transform: none;
         opacity: 0;
       }

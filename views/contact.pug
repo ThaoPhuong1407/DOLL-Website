@@ -1,0 +1,24 @@
+extends base
+
+block content
+    header.header.header--bg-contact
+        .header__logo-box
+            a(href="/" target="")
+                img.header__logo(src="img/logo_white_doll.png" alt="logo")
+
+        .section-book 
+            .row
+                .book
+                    .contact-info
+                        h1 Contact Information
+                        i.icon-contact.icon-basic-smartphone  (+1) 978-372-7635  
+                        i.icon-contact.icon-basic-printer   Fax: (+1) 619-828-6605  
+                        i.icon-contact.icon-basic-mail-open  info@dollabs.com 
+                        i.icon-contact.icon-basic-home   DOLL Inc. 114 Waltham Street #14 Lexington, MA 02421  
+
+                .section-map
+                    #map(data-locations=`Doll`)
+
+
+    script(src='js/mapbox.js')
+

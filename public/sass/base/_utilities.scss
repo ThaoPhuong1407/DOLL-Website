@@ -28,6 +28,39 @@
   margin-top: 10rem !important;
 }
 
+.u-margin-top-medium {
+  margin-top: 4rem !important;
+}
+
 .color-white {
   color: $color-grey-light-1 !important;
+}
+
+.u-margin-right-small {
+  margin-right: 4rem !important;
+}
+
+.non-decoration {
+  a:link {
+    text-decoration: none;
+    color: $color-primary-light;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: $color-primary-light;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: $color-fourth-light;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.2rem);
+  }
+
+  a:active {
+    text-decoration: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.2rem);
+  }
 }

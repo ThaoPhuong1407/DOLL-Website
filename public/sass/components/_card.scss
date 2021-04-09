@@ -41,19 +41,19 @@
         );
       }
 
-      &-4 {
-        background-image: linear-gradient(
-          to right bottom,
-          $color-primary-light,
-          $color-primary-dark
-        );
-      }
-
       &-3 {
         background-image: linear-gradient(
           to right bottom,
           $color-tertiary-light,
           $color-tertiary-dark
+        );
+      }
+
+      &-4 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
         );
       }
     }
@@ -95,7 +95,7 @@
           rgba($color-secondary-light, 0.15),
           $color-secondary-dark
         ),
-        url(../img/Paul.jpg);
+        url(../img/profilePics/Paul.jpg);
     }
 
     &--2 {
@@ -104,7 +104,7 @@
           rgba($color-primary-light, 0.15),
           $color-primary-dark
         ),
-        url();
+        url(../img/profilePics/Prakash.png);
       @include respond(tab-port) {
         background-position: bottom;
       }
@@ -116,7 +116,7 @@
           rgba($color-tertiary-light, 0.15),
           $color-tertiary-dark
         ),
-        url(../img/Dan.png);
+        url(../img/profilePics/Dan.png);
     }
 
     &--4 {
@@ -125,7 +125,7 @@
           rgba($color-fourth-light, 0.15),
           $color-fourth-dark
         ),
-        url(../img/Thao.jpg);
+        url(../img/profilePics/Thao.jpg);
       @include respond(tab-port) {
         background-position: bottom;
       }
@@ -134,8 +134,44 @@
     &--5 {
       background-image: linear-gradient(
           to right bottom,
+          rgba($color-tertiary-light, 0.05),
+          $color-tertiary-dark
+        ),
+        url(../img/profilePics/Bob.jpg);
+    }
+
+    &--6 {
+      background-image: linear-gradient(
+          to right bottom,
           rgba($color-secondary-light, 0.15),
           $color-secondary-dark
+        ),
+        url(../img/profilePics/Victor.jpeg);
+    }
+
+    &--7 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.15),
+          $color-secondary-dark
+        ),
+        url(../img/profilePics/Andreas.png);
+    }
+
+    &--8 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.15),
+          $color-primary-dark
+        ),
+        url();
+    }
+
+    &--9 {
+      background-image: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.15),
+          $color-primary-dark
         ),
         url();
     }

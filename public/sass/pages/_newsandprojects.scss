@@ -1,0 +1,58 @@
+.section-future {
+  padding-top: 22rem;
+  padding-bottom: 5rem;
+
+  @include respond(tab-port) {
+    padding: 10rem 0;
+  }
+}
+
+.projects {
+  background-image: linear-gradient(
+    to right top,
+    $color-primary-light,
+    $color-primary-dark
+  );
+}
+
+.news {
+  text-align: center;
+  color: $color-grey-light-2;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.news-tab {
+  // background-color: white;
+  margin: auto;
+  margin-bottom: 3rem;
+  width: 40%;
+  font-size: 1.2rem;
+
+  a:link {
+    text-decoration: none;
+    color: $color-primary-light1;
+  }
+
+  a:visited {
+    text-decoration: none;
+    color: $color-primary-light1;
+  }
+
+  a:hover {
+    text-decoration: none;
+    color: $color-fourth-light;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.2rem);
+  }
+
+  a:active {
+    text-decoration: none;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.15);
+    transform: translateY(-0.2rem);
+  }
+}
+
+#more {
+  display: none;
+}

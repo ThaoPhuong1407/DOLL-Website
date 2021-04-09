@@ -23,29 +23,6 @@
   }
 }
 
-.section-future {
-  margin-top: -10rem;
-  padding: 20rem 0;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.3),
-      rgba($color-primary-dark, 0.3)
-    ),
-    url(../img/headerBG3.jpg);
-  background-size: cover;
-  transform: skewY(-6.65deg);
-
-  // > direct children of this section
-  // * all children of this section
-  & > * {
-    transform: skewY(7deg);
-  }
-
-  @include respond(tab-port) {
-    padding: 10rem 0;
-  }
-}
-
 .test-div-rel {
   position: relative;
   background-color: black;
