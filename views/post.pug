@@ -5,58 +5,45 @@ block content
     header.header.header--bg-post
         .header__logo-box
             a(href="/" target="")
-                img.header__logo(src="img/logo_white_doll.png" alt="logo")
-
+                img.header__logo(src="/img/logo_white_doll.png" alt="logo")
         .header__text-box.u-margin-top-huge
             h1.heading-primary
-                span.heading-primary--title Title goes here
-                h2.color-white.h2-size By LISA MASCARO and JOSH BOAK Associated Press
-                h3.color-white.h3-size April 6, 2021, 1:45 AM • 6 min read
-
-    section
+                span.heading-primary--title= title
+                h2.color-white.h2-size By #{author} | #{source}
+                h3.color-white.h3-size #{dateCreated.toLocaleString('en-us', {month: 'long', day: 'numeric',year: 'numeric'})}
+    section.non-decoration
         .row.section-post 
             .col-3-of-4
-                img.post-photo-right(src="img/solutions/cyberSecurity.jpg" alt="Photo 3") 
-                p.paragraph Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                    | It has roots in a piece of classical Latin literature from 45 BC, 
-                    | making it over 2000 years old. Richard McClintock, a Latin professor 
-                    | at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
-                    | consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical 
-                    | literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
-                    | "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, 
-                    | very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                    | <br> 
-                    | <br> 
-                    | The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. 
-                    | Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced 
-                    |  in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-                    | Contrary to popular belief, Lorem Ipsum is not simply random text. 
-                    | It has roots in a piece of classical Latin literature from 45 BC, 
-                img.post-photo-left(src="img/solutions/missionModeling.jpg" alt="Photo 3") 
-                p.paragraph
-                    | making it over 2000 years old. Richard McClintock, a Latin professor 
-                    | at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
-                    | consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical 
-                    | literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
-                    | "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This bo
-                    | consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical 
-                    | literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
-                    | "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This bo
+                - let position = 'left'
+                - const paragraphs = body.split('\n')
+                    for p in paragraphs
+                        if (image.length !== 0)
+                            img(class='post-photo-' + position src=`https://drive.google.com/thumbnail?id=${image[0]}` alt="Photo") 
+                            - image.shift()
+                            - position = (position === 'right') ? 'left' : 'right'
+                        if p.includes('h1')
+                            h1 #{p.replace("h1", "")}
+                        else if p.includes('<a>')
+                            - const a = p.split('<a>');
+                            p.paragraph #{a[0]} 
+                                a(href=`${a[1]}`) #{a[2]}
+                        else
+                            p.paragraph #{p}
 
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/SXdifzbQ8Ao?start=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                //- <iframe width="560" height="315" src="https://www.youtube.com/embed/SXdifzbQ8Ao?start=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
             .col-1-of-4.related-post
                 h2.h2-size Recent news
-                a.block(href="/post") Lorem ipsum dolor sit amet con adipisicing elit.
-                a.block(href="/post") Lorem ipsum dolor sit amet con adipisicing elit.
-                a.block(href="/post") Lorem ipsum dolor sit amet con adipisicing elit.
-                a.block(href="/post") Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                <br>
+                each post in allPosts
+                    a.block(href=`/post/${post.slug}`)= post.title
+
                 <hr>
                 <br>
+
                 h2.h2-size Recent projects
-                a.block(href="/post") Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                a.block(href="/post") Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                each project in allProjects
+                    a.block(href="/construction")= project.name
+
 
 
 block footer

@@ -9,74 +9,50 @@ block content
         .section-future.projects 
             .u-center-text.u-margin-bottom-big
                 h2.heading-secondary.heading-secondary--white Projects
-            .row
-                .col-1-of-3
-                    .feature-box
-                        i.feature-box__icon.icon-basic-paperplane
-                        //- https://www.youtube.com/watch?v=A32p24rTe4Y
-                        h3.heading-tertiary.u-margin-bottom-small Pamela
-                        p.feature-box__text
-                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
 
-                .col-1-of-3
-                    .feature-box
-                        i.feature-box__icon.icon-basic-lightbulb
-                        h3.heading-tertiary.u-margin-bottom-small CART
-                        p.feature-box__text
-                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+            //- Pamela video: https://www.youtube.com/watch?v=A32p24rTe4Y
+            - for (var i = 0, row = projects.length/3; i < row; i++) {
+                .row
+                    .col-1-of-3
+                        .feature-box
+                            i.feature-box__icon(class=`icon-${projects[3 * i].icon}`)
+                            h3.heading-tertiary.u-margin-bottom-small #{projects[3 * i].name}
+                            p.feature-box__text #{projects[3 * i].shortDescription}
+                            a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
 
-                .col-1-of-3
-                    .feature-box
-                        i.feature-box__icon.icon-basic-settings
-                        h3.heading-tertiary.u-margin-bottom-small DCRYP
-                        p.feature-box__text
-                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+                    .col-1-of-3
+                        .feature-box
+                            i.feature-box__icon(class=`icon-${projects[3 * i + 1].icon}`)
+                            h3.heading-tertiary.u-margin-bottom-small #{projects[3 * i + 1].name}
+                            p.feature-box__text #{projects[3 * i + 1].shortDescription}
+                            a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
 
-            .row
-                .col-1-of-3
-                    .feature-box
-                        i.feature-box__icon.icon-basic-settings
-                        h3.heading-tertiary.u-margin-bottom-small PAC2MAN
-                        p.feature-box__text
-                            //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-                        a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+                    .col-1-of-3
+                        .feature-box
+                            i.feature-box__icon(class=`icon-${projects[3 * i + 2].icon}`)
+                            h3.heading-tertiary.u-margin-bottom-small #{projects[3 * i + 2].name}
+                            p.feature-box__text #{projects[3 * i + 2].shortDescription}
+                            a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+            - }
 
-                .col-1-of-3
-                    .feature-box
-                        i.feature-box__icon.icon-basic-target
-                        h3.heading-tertiary.u-margin-bottom-small ADAM
-                        p.feature-box__text
-                            | On going project -- to be updated
-                        //- a.btn-text.u-margin-top-medium(href="/post") Learn more &rarr;
-
-                .col-1-of-3
-                    .feature-box
-                        i.feature-box__icon.icon-basic-world
-                        h3.heading-tertiary.u-margin-bottom-small RITA
-                        p.feature-box__text
-                            | On going project -- to be updated
-                        //- a.btn-text.u-margin-top-medium(href="/post") Learn more &rarr;
+            //- .col-1-of-3
+            //-     .feature-box
+            //-         i.feature-box__icon.icon-basic-settings
+            //-         h3.heading-tertiary.u-margin-bottom-small DCRYP
+            //-         p.feature-box__text
+            //-             //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            //-             //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
+            //-         a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
 
         .section-future.news#press
             .u-center-text.u-margin-bottom-medium
                 h2.heading-secondary.green Press Release
 
-            .news-tab
-                a(href="/post/2")
-                    h2 DOLL Inaugurates a New Robot Laboratory To Study Developmental Learning
-                    p A new research and educational partnership with UCLy-ESQESE (Catholic University of Lyon) has been established to further the joint, machine learning for robotics,  research goal
-
-            .news-tab
-                a(href="/post/1")
-                    h2 DOLL Inaugurates a New Robot Laboratory To Study Developmental Learning
-                    p  The new laboratory, L.A.I.R., Laboratory for Affective andIndependent Robotics, is a space where robots can learn by exploring their environment.
+            each press in posts
+                .news-tab
+                    a(href=`/post/${press.slug}`)
+                        h2 #{press.title}
+                        p #{press.description}
 
         .section-stories#updates
             //- .bg-video

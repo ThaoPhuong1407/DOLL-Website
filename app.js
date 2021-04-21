@@ -1,68 +1,47 @@
 const express   = require('express');
 const path      = require('path');
+const morgan = require('morgan');
 
-// Add a bunch of functions from module express to the variable `app`
+// Error related
+const AppError = require('./utils/appError');
+const globalErrorHandler = require('./controllers/errorController');
+
+// Routes related 
+const viewRouter = require('./routes/viewRoutes');
+const postRouter = require('./routes/postRoutes');
+const projectRouter = require('./routes/projectRoutes');
+
+
 const app = express();
 
 //  Setting up pug templates
+// ideally, all request info should be in the req, but express doesn't do that ==> we need a middleware: express.json()
+app.use(express.json({ limit: '10kb' })); // Need this for POST request
 app.set('view engine', 'pug'); // Express framework supports pug template
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views')); // view engine is called "views" in Express. Set "views" to path ./views
+app.use(express.static(path.join(__dirname, 'public/'))); // Serving static files from the public folders
 
-// Serving static files from the public folders
-app.use(express.static(path.join(__dirname, 'public/')));
+// Development logging
+if (process.env.NODE_ENV === 'development') {
+    app.use(morgan('dev'));
+}
 
-app.get('/', (req, res)=> {
-    res.status(200).render('home', {
-        test: 'Thao Phuong',
-    });
+/* -------------- */
+/*    ROUTES      */
+/* -------------- */
+app.use('/', viewRouter); // templates
+app.use('/api/post', postRouter); 
+app.use('/api/project', projectRouter); 
+
+// all = for all routes: post, get, etc.
+app.all('*', (req, res, next) => {
+  const message = `Can't find ${req.originalUrl} on this server!`;
+  const err = new AppError(message, 404);
+  next(err);
 });
 
-app.get('/about', (req, res)=> {
-    res.status(200).render('about', {
-        test: 'Thao Phuong',
-    });
-});
+app.use(globalErrorHandler);
 
-app.get('/contact', (req, res)=> {
-    res.status(200).render('contact', {
-        test: 'Thao Phuong',
-    });
-});
+module.exports = app;
 
-app.get('/newsandprojects', (req, res)=> {
-    res.status(200).render('newsandprojects', {
-        test: 'Thao Phuong',
-    });
-});
-
-
-app.get('/post', (req, res)=> {
-    res.status(200).render('post', {
-        test: 'Thao Phuong',
-    });
-});
-
-app.get('/post/1', (req, res)=> {
-    res.status(200).render('post1', {
-        test: 'Thao Phuong',
-    });
-});
-
-app.get('/post/2', (req, res)=> {
-    res.status(200).render('post2', {
-        test: 'Thao Phuong',
-    });
-});
-
-app.get('/construction', (req, res)=> {
-    res.status(200).render('construction', {
-        test: 'Thao Phuong',
-    });
-});
-
-
-const port = process.env.PORT || 3000; 
-app.listen(port, () => {
-    console.log(`App running on port ${port}...`);
-});
 

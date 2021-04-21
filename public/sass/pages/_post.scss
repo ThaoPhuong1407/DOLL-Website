@@ -3,13 +3,15 @@
   margin: 10rem auto;
 
   @include respond(tab-port) {
-    padding: 20rem 0;
+    padding: 0rem 0;
   }
 }
+
 .post-photo-right {
   margin: 1rem;
   float: right;
   max-width: 40%;
+  min-width: 300px;
   height: auto;
 }
 
@@ -17,6 +19,7 @@
   margin: 1rem;
   float: left;
   max-width: 40%;
+  min-width: 300px;
   height: auto;
 }
 
