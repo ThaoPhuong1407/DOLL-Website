@@ -36,196 +36,94 @@ block content
     section.section-tours.section-members
         .u-center-text.u-margin-bottom-big
             h2.heading-secondary Meet the team
-        .row
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture
-                            img.card__picture--general(src="/img/profilePics/Paul.jpg" alt="Paul")
-                        h4.card__heading
-                            span.card__heading-span  Dr. Paul Robertson
-                        .card__details
-                            <ul> <li>Chief Scientist, President</li> </ul>
-                    .card__side.card__side--back.card__side--back-1
-                        .card__cta 
-                            .card__price-box
-                                p.card__description
-                                    | Dr. Robertson, is working to apply self-adaptive software and machine learning principles to Computer Vision, 
-                                    | and Perceptual Intelligence. His current research activities include self adaptive software architectures and technology, 
-                                    | symbolic learning systems, perceptually enabled interfaces, physically embedded intelligent autonomous systems 
-                                    | ,and advanced programming language environments and design. 
-                                    | He was recently a senior scientist at Raytheon BBN Technologies.
-                                    | He was a research scientist at the M.I.T Computer Science and Artificial Intelligence Laboratory (CSAIL)
-                                    | He has worked on several DARPA funded programs, including IL, SRS, ANTS, SAFER, and EDCS. He was PI on SAFER and EDCS.
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture
-                            img.card__picture--general(src="/img/profilePics/Prakash.png" alt="Prakash")
-                        h4.card__heading
-                            span.card__heading-span Prakash Manghwani
-                        .card__details
-                            <ul><li>Senior Architect</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        .card__cta 
-                            .card__price-box
-                                p.card__description 
-                                    |Before coming to DOLL, Prakash worked as a software engineer at PepperMob 
-                                    |and before that as a software engineer at Raytheon BBN Technologies.  
-                                    |Where he worked on Concurrent High performance applications development,  
-                                    |Semantic Web Technologies,  Scalable, fast fault tolerant node failure detection, 
-                                    |program composition for embedded systems, Sensor information technologies, 
-                                    |and Open map design and implementation. Prakash holds a Bachelor of Science in Computer Engineering.
 
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture 
-                            img.card__picture--general(src="/img/profilePics/Dan.png" alt="Dan")
-                        h4.card__heading
-                            span.card__heading-span  Dan Cerys
-                        .card__details
-                            <ul><li>Chief Architect</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        .card__cta 
-                            .card__price-box
-                                p.card__description 
-                                    |Dan is an experienced software development leader with experience
-                                    | ranging from DARPA R&D programs to delivering mission-critical
-                                    | applications used daily by thousands of users.
-                                    | He has successfully implemented practical state-of-the-art computer
-                                    | systems in a variety of problem domains, particularly in areas of 
-                                    | logistics and cyber security.  Technical interests include: planning
-                                    | and scheduling; user interfaces that distill large-scale, multi-attribute
-                                    | data into actionable information; knowledge representation; and distributed
-                                    | object-oriented systems.
-        .row    
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture 
-                            img.card__picture--general(src="/img/profilePics/Thao.jpg" alt="Thao")
+        - for (var i = 0, row = people.length/3; i < row; i++) {
+            .row
+                - if (3 * i < people.length)
+                    .col-1-of-3
+                        .card
+                            .card__side.card__side--front
+                                if (people[3 * i].image.length === 0)
+                                    .card__picture.card__picture--empty 
+                                else 
+                                    .card__picture
+                                        img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i].image[0]}` alt=`${people[3 * i].name}`)
+                                h4.card__heading
+                                    span.card__heading-span #{people[3 * i].name}
+                                .card__title
+                                    <ul> <li>#{people[3 * i].jobTitle}</li> </ul>
+                            .card__side.card__side--back.card__side--back-1
+                                .card__cta 
+                                    .card__details
+                                        - const paragraph = people[3 * i].description.split('\n')
+                                        for p in paragraph
+                                            if p.includes('<a>')
+                                                - const a = p.split('<a>');
+                                                    p.card__description #{a[0]} 
+                                                        a(href=`${a[1]}`) #{a[2]}
+                                                        span.card__description #{a[3]} 
+                                                <br>
+                                            else 
+                                                p.card__description= p
+                                                <br>
 
-                        h4.card__heading
-                            span.card__heading-span.card__heading-span Thao Phuong
-                        .card__details
-                            <ul><li>Software Developer</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        //-  cta = call to action 
-                        .card__cta 
-                            .card__price-box.non-decoration
-                                p.card__description
-                                    | Hi there, I'm Thao. If you want to see my past, check out my 
-                                    a(href="http://www.thao-phuong.com/images/Resume.pdf") resume
-                                    | . But the pass won't defind the future. Thus, I will tell you what I can do.
-                                    | My biggest achievement is to continuously surpass my current self. 
-                                    | Usually, people want to achieve the big next goal because they want to seek 
-                                    | validation from others, which is a good thing. I am, too, a highly competitive 
-                                    | person. But the more crucial part, in my perspective, lies in the ability to see 
-                                    | myself as a real competitor. This way, I can always strive to become better and never stop learning.
-                                    <br> <br>
-                                    | I want to learn many things, ranging from web and app development to multiple machine learning aspects. 
-                                    | However, all of my learnings serve only 1 purpose -- that is to make the world a better place. 
-                                    | It doesn't have to be the next big thing. Tiny changes that bring little improvement to many 
-                                    | lives are the idea. So if you also want to contribute as I do, don't hesitate to reach out!
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture 
-                            img.card__picture--general(src="/img/profilePics/Bob.jpg" alt="Bob")
-                        h4.card__heading
-                            span.card__heading-span  DR. ROBERT LADDAGA
-                        .card__details
-                            <ul><li>Consulting Scientist</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        .card__cta 
-                            .card__price-box
-                                p.card__description 
-                                    | To be updated
 
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture 
-                            img.card__picture--general(src="/img/profilePics/Victor.jpeg" alt="Bob")
-                        h4.card__heading
-                            span.card__heading-span Victor Santana
-                        .card__details
-                            <ul><li>Summer Intern 2021</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        //-  cta = call to action 
-                        .card__cta 
-                            .card__price-box
-                                p.card__description
-                                    | To be updated
+                - if (3 * i + 1 < people.length)
+                    .col-1-of-3
+                        .card
+                            .card__side.card__side--front
+                                if (people[3 * i + 1].image.length === 0)
+                                    .card__picture.card__picture--empty 
+                                else
+                                    .card__picture
+                                        img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i + 1].image[0]}` alt=`${people[i].name}`)
+                                h4.card__heading
+                                    span.card__heading-span #{people[3 * i + 1].name}
+                                .card__title
+                                    <ul><li>#{people[3 * i + 1].jobTitle}</li></ul>
+                            .card__side.card__side--back.card__side--back-1
+                                .card__cta 
+                                    .card__details
+                                        - const paragraph = people[3 * i + 1].description.split('\n')
+                                        for p in paragraph
+                                            if p.includes('<a>')
+                                                - const a = p.split('<a>');
+                                                    p.card__description #{a[0]} 
+                                                        a(href=`${a[1]}`) #{a[2]}
+                                                        span.card__description #{a[3]} 
+                                                <br>
+                                            else 
+                                                p.card__description= p
+                                                <br>
 
-        .row    
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture
-                            img.card__picture--general(src="/img/profilePics/Heidi.jpg" alt="Bob")
-                        h4.card__heading
-                            span.card__heading-span  Heidi Souibki
-                        .card__details
-                            <ul><li> Summer Intern 2020 </li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        .card__cta 
-                            .card__price-box
-                                p.card__description 
-                                    | To be updated
-
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture 
-                            img.card__picture--general(src="/img/profilePics/Andreas.png" alt="Bob")
-                        h4.card__heading
-                            span.card__heading-span Andreas Hofmann
-                        .card__details
-                            <ul><li>Chief Scientist 2014-2018</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        //-  cta = call to action 
-                        .card__cta 
-                            .card__price-box.non-decoration
-                                p.card__description
-                                    | Dr. Hofmann is a leading expert in the area of autonomous systems, particularly, in the fields of robotics, 
-                                    | cyber-physical systems, and process control systems.  
-                                    | He has been responsible for developing innovative technology and algorithms that work in real-time environments, 
-                                    | including the Gensym G2 inference engine and graphical process diagram system, algorithms for bipedal 
-                                    | robot balance control, controllers for energy efficient mobile hydraulic systems, and integrated 
-                                    | task and motion planning architectures for individual robots, and teams of robots working with humans.  
-                                    | Dr. Hofmann has a BS in Electrical Engineering from MIT, an MS in Electrical Engineering from Rennselaer Polytechnic Institute, and a Ph.D. in Computer Science from MIT.
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture.card__picture--empty 
-                            //- img.card__picture--general(src="#" alt="Chris")
-                        h4.card__heading
-                            span.card__heading-span  Chris Hofmann Intern
-                        .card__details
-                            <ul><li>Intern 2014-2018</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        .card__cta 
-                            .card__price-box
-                                p.card__description 
-                                    | To be updated
-
-        .row    
-            .col-1-of-3
-                .card
-                    .card__side.card__side--front
-                        .card__picture
-                            img.card__picture--general(src="/img/profilePics/Carole.jpg" alt="Carole")
-                        h4.card__heading
-                            span.card__heading-span Carole J. Lee
-                        .card__details
-                            <ul><li>Summer Intern 1998</li></ul>
-                    .card__side.card__side--back.card__side--back-1
-                        .card__cta 
-                            .card__price-box
-                                p.card__description 
-                                    | To be updated
+                - if (3 * i + 2 < people.length)
+                    .col-1-of-3
+                        .card
+                            .card__side.card__side--front
+                                if (people[3 * i + 2].image.length === 0)
+                                    .card__picture.card__picture--empty 
+                                else
+                                    .card__picture 
+                                        img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i + 2].image[0]}` alt=`${people[i].name}`)
+                                h4.card__heading
+                                    span.card__heading-span #{people[3 * i + 2].name}
+                                .card__title
+                                    <ul><li>#{people[3 * i + 2].jobTitle}</li></ul>
+                            .card__side.card__side--back.card__side--back-1
+                                .card__cta 
+                                    .card__details
+                                        - const paragraph = people[3 * i + 2].description.split('\n')
+                                        for p in paragraph
+                                            if p.includes('<a>')
+                                                - const a = p.split('<a>');
+                                                    p.card__description #{a[0]} 
+                                                        a(href=`${a[1]}`) #{a[2]}
+                                                        span.card__description #{a[3]} 
+                                                <br>
+                                            else 
+                                                p.card__description= p
+                                                <br>
+            - }
 
 block footer
     include __footer

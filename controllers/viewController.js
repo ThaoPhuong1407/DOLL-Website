@@ -2,18 +2,44 @@ const catchAsync = require('../utils/catchAsync');
 const APIFeatures = require('../utils/apiFeatures');
 const Post = require('../models/postModel');
 const Project = require('../models/projectModel');
+const Person = require('../models/personModel');
+const Update = require('../models/updateDOLLModel');
+
 
 const renderPage = (page) => (req, res, next) => {
     res.status(200).render(page);
   };
 
-exports.getHome = renderPage('home');
-exports.getAbout = renderPage('about');
 exports.getContact = renderPage('contact');
+exports.getConstruction = renderPage('construction');
+
+exports.getHome = catchAsync(async (req, res, next) => {
+  // 1) get the data
+  const featuresUpdate = new APIFeatures(Update.find(), { sort: '-dateCreated' }).sort();
+  let updates = await featuresUpdate.query; 
+
+  if (updates.length >= 5) {
+    updates = updates.slice(0,5);
+  }
+
+   // 2) Render template usng data from step 1
+  res.status(200).render('home', {
+    updates,
+  });
+});
+
+exports.getAbout = catchAsync(async (req, res, next) => {
+  // 1) get the data
+  const people = await Person.find();
+  // 2) Render template usng data from step 1
+  res.status(200).render('about', {
+    people: people,
+  });
+});
+
 
 exports.getNewsProjects = catchAsync(async (req, res, next) => {
   // 1) get the data
-
   // a) Press Releases
   const post = await Post.find();
   const press = [];
@@ -39,26 +65,23 @@ exports.getNewsProjects = catchAsync(async (req, res, next) => {
   // b) Projects
   const projects = await Project.find();
 
-  // 2) Build the template
-  // 3) Render template usng data from step 1
+  // c) Updates from DOLL 
+  const featuresUpdate = new APIFeatures(Update.find(), { sort: '-dateCreated' }).sort();
+  let updates = await featuresUpdate.query; 
+ 
+  // 2) Render template usng data from step 1
   res.status(200).render('newsandprojects', {
     title: 'All Press Releases',
     posts: press,
     projects: projects,
+    updates: updates,
   });
 });
-
 
 exports.getPost = catchAsync(async (req, res, next) => {
   // 1) get the data
   // a) Get data for this specific press release
   const post = await Post.findOne({ slug: req.params.slug });
-  post.image.forEach((link, index, theArray) => {
-    const sharedId = link.substring(
-      link.lastIndexOf('d/') + 2,
-      link.lastIndexOf('/view'));
-    theArray[index]= sharedId;
-  });
 
   // b) Get titles of the 5 most recent Press Releases
   const featuresPost = new APIFeatures(Post.find(), { sort: '-dateCreated' }).sort();
@@ -74,8 +97,7 @@ exports.getPost = catchAsync(async (req, res, next) => {
     allProjects = allProjects.slice(0,5);
   }
 
-  // 2) Build the template
-  // 3) Render template usng data from step 1
+  // 2) Render template usng data from step 1
   res.status(200).render('post', {
     title: post.title,
     author: post.author,
@@ -87,5 +109,3 @@ exports.getPost = catchAsync(async (req, res, next) => {
     allProjects: allProjects,
   });
 });
-
-exports.getConstruction = renderPage('construction');

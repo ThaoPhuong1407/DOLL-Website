@@ -81,88 +81,32 @@ block content
             .u-center-text.u-margin-bottom-big
                 h2.heading-secondary.green Latest Updates from DOLL
 
-            .row 
-                .story
-                    a.btn.btn--story(href="/post/2") 
-                        figure.story__shape
-                            img.story__img(src="img/News1.jpg" alt="Press release")
-                            figcaption.story__caption Read more &rarr;
+            each update in updates 
+                .row
+                    .story
+                        if(update.body === "")
+                            .story__text.non-decoration
+                                h3.heading-tertiary.u-margin-bottom-small #{update.title}
+                                p.feature-box__text
+                                    //- em DOLL — #{update.dateCreated}
+                                    em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1 + 1}`}
+                                p.feature-box__text
+                        else
+                            figure.story__shape.u-margin-right-small 
+                                img.story__img(src="img/News2.jpg" alt="place holder")
 
-                        .story__text
-                            h3.heading-tertiary.u-margin-bottom-small DOLL INAUGURATES A NEW ROBOT LABORATORY TO STUDY DEVELOPMENTAL LEARNING
-                            p.feature-box__text
-                                em DOLL — 23 January 2020
-                            p.feature-box__text
-                                | A new research and educational partnership with UCLy-ESQESE (Catholic University of Lyon) has been established to further the joint, machine learning for robotics, research goals of Dr. Paul Robertson, chief scientist at DOLL Inc. and Dr. Olivier Georgeon (ESQESE) researcher at the Group of Epistemology and Ethics of Sciences and Technologies (GEEST) of the Biosciences, Technologies and Ethics pole.
-
-            .row 
-                .story
-                    a.btn.btn--story(href="/post/1") 
-                        figure.story__shape
-                            img.story__img(src="img/News1.jpg" alt="Press release")
-                            figcaption.story__caption Read more &rarr;
-
-                        .story__text
-                            h3.heading-tertiary.u-margin-bottom-small DOLL INAUGURATES A NEW ROBOT LABORATORY TO STUDY DEVELOPMENTAL LEARNING
-                            p.feature-box__text
-                                em DOLL — 27 November 2019
-                            p.feature-box__text
-                                | The new laboratory, L.A.I.R., Laboratory for Affective andIndependent Robotics, is a space where robots can learn by exploring their environment.Long term experiments involving robots with differing capabilities and sizes will inhabitthis space where they can interact with each other, and explore how to interact withobjects in the laboratory.
-
-
-            .row
-                .story
-                    figure.story__shape.u-margin-right-small 
-                        img.story__img(src="img/News2.jpg" alt="DOLL's update")
-
-                    .story__text
-                        h3.heading-tertiary.u-margin-bottom-small DOLL/Vencore wins CHASE
-                        p.feature-box__text
-                            em DOLL — 2018
-                        p.feature-box__text
-                            | DOLL and MIT will subcontract to Vencore Labs on WILEE, a set of components for Threat Detection and Characterization as part of DARPA I2O's CHASE program. Scaling the Cyber Hunt problem poses several key technical challenges. Detecting and characterizing cyber threats at scale in large enterprise networks is hard because of the vast quantity and complexity of the data that must be analyzed as adversaries deploy varied and evolving tactics to accomplish their goals. WILEE's Threat Detector accelerates the hunt process by translating high-level threat descriptions into many possible concrete implementations and using adversarial planning, genetic perturbation, and data-driven evaluation to automatically prioritize hunt activities, inform data collection, minimize detection time, and detect both known and novel malicious activities with high confidence. WILEE's threat interpretation and validation process lowers the cognitive burden on Cyber Protection Team (CPT) hunt operators by producing validated threat indicators in human-readable form, alongside a continuous confidence score to assist in triaging and prioritizing responses when operating with limited resources.
-            .row 
-                .story
-                    figure.story__shape
-                        img.story__img(src="img/News2.jpg" alt="DOLL's update")
-
-                    .story__text
-                        h3.heading-tertiary.u-margin-bottom-small DOLL/Vanderbilt University wins CASE
-                        p.feature-box__text
-                            em DOLL — 2018
-                        p.feature-box__text
-                            | DOLL will subcontract to Vanderbilt University to develop DCRYPPS on the DARPA CASE program. DCRYPPS (Deriving Cyber-security Requirements Yielding Protected Physical Systems) will help automate the design and implementation of cyber physical systems (CPS) to meet stringent cyber security requirements, without sacrificing functional performance, maintaining timing and cost constraints. The system will help derive the cyber security requirements, using model based diagnosis, cyber physical properties and cyber physical attack models, analysis of cyber requirements, and use of probabilistic certificates in managing cyber security requirements.
-
-            .row 
-                .story
-                    figure.story__shape
-                        img.story__img(src="img/News2.jpg" alt="DOLL's update")
-
-
-                    .story__text
-                        h3.heading-tertiary.u-margin-bottom-small DOLL/SIFT wins CPS
-                        p.feature-box__text
-                            em DOLL — 2018
-                        p.feature-box__text
-                            | DOLL will subcontract to SIFT on the Creative Problem Solver (CPS) program, designing a system that will be able to generate and validate out-of-the-box approaches to a variety of difficult planning problems.  DOLL will begin its work on the program by designing a detailed simulation of some of the challenging problems described in Andy Weir's book, The Martian.
-
-            //- .row 
-            //-     .story
-            //-         a.btn.btn--story(href="/construction") 
-            //-             figure.story__shape
-            //-                 img.story__img(src="img/News2.jpg" alt="DOLL's update")
-            //-                 figcaption.story__caption Read more &rarr;
-
-            //-             .story__text
-            //-                 h3.heading-tertiary.u-margin-bottom-small DOLL/Vanderbilt University wins CASE
-            //-                 p.feature-box__text
-            //-                     em DOLL — 2018
-            //-                 p.feature-box__text
-            //-                     | DOLL will subcontract to Vanderbilt University to develop DCRYPPS on the
-            //-                     | DARPA CASE program. DCRYPPS (Deriving Cyber-security Requirements Yielding 
-            //-                     | Protected Physical Systems) will help automate the design and implementation 
-            //-                     | of cyber physical systems (CPS) to meet stringent cyber security requirements, 
-            //-                     | without sacrificing functional performance, maintaining timing and cost constraints.
+                            .story__text.non-decoration
+                                h3.heading-tertiary.u-margin-bottom-small #{update.title}
+                                p.feature-box__text
+                                    //- em DOLL — #{update.dateCreated}
+                                    em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1 + 1}`}
+                                p.feature-box__text
+                                    if (update.body.includes('<a>'))
+                                        - const a = update.body.split('<a>')
+                                        | #{a[0]}
+                                        a(href=`${a[1]}`) #{a[2]}
+                                    else 
+                                        | #{update.body}
 
             .u-center-text.u-margin-top-huge
                 a.btn-text(href="/newsandprojects#press") Read all news &rarr;

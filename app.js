@@ -10,7 +10,8 @@ const globalErrorHandler = require('./controllers/errorController');
 const viewRouter = require('./routes/viewRoutes');
 const postRouter = require('./routes/postRoutes');
 const projectRouter = require('./routes/projectRoutes');
-
+const personRouter = require('./routes/personRoutes');
+const updateRouter = require('./routes/updateRoutes');
 
 const app = express();
 
@@ -32,6 +33,8 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/', viewRouter); // templates
 app.use('/api/post', postRouter); 
 app.use('/api/project', projectRouter); 
+app.use('/api/person', personRouter); 
+app.use('/api/update', updateRouter); 
 
 // all = for all routes: post, get, etc.
 app.all('*', (req, res, next) => {
