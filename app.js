@@ -12,6 +12,7 @@ const postRouter = require('./routes/postRoutes');
 const projectRouter = require('./routes/projectRoutes');
 const personRouter = require('./routes/personRoutes');
 const updateRouter = require('./routes/updateRoutes');
+const solutionRouter = require('./routes/solutionRoutes');
 
 const app = express();
 
@@ -35,6 +36,7 @@ app.use('/api/post', postRouter);
 app.use('/api/project', projectRouter); 
 app.use('/api/person', personRouter); 
 app.use('/api/update', updateRouter); 
+app.use('/api/solution', solutionRouter); 
 
 // all = for all routes: post, get, etc.
 app.all('*', (req, res, next) => {

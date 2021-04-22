@@ -17,67 +17,16 @@ block content
         section.section-about#section-about
             .u-center-text.u-margin-bottom-big
                 h2.heading-secondary Our solutions
-            .row
-                .col-2-of-3
-                    h3.heading-tertiary.u-margin-bottom-small Active Perception
-                    p.paragraph 
-                        |Active perception draws on models to inform context-dependent tuning of sensors,
-                        |direct sensors towards phenomena of greatest interest, to follow up initial alerts 
-                        |from cheap, inaccurate sensors with targeted use of expensive, accurate sensors, 
-                        |and to intelligently combine results from sensors with context information to produce increasingly accurate results.
-                    a.btn-text(href="#popup-active-perception") Learn more &rarr;    
-                .col-1-of-3
-                    .composition
-                        <img src="img/solutions/activePerception.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-
-            .row
-                .col-2-of-3
-                    h3.heading-tertiary.u-margin-bottom-small Mission modeling
-                    p.paragraph
-                        |Motivated by the world of military planning, we use the term Mission Modeling to refer 
-                        |to the activity of capturing and representing all of the goals, preferences, and constraints, 
-                        |along with the detailed execution plan that satisfies each of them. DOLL's specification-based 
-                        |mission modeling approach supports the top-down generation of detailed interdependent activity plans, 
-                        |an execution mechanism that ensures that all activities are performed in the correct order, and provides 
-                        |continuous assessment of the status of all subparts of the plan along with the aggregate status of the overall mission. 
-                    a.btn-text(href="#popup-mission-modeling") Learn more &rarr;    
-                .col-1-of-3
-                    .composition
-                        <img src="img/solutions/missionModeling.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-
-            .row
-                .col-2-of-3
-                    h3.heading-tertiary.u-margin-bottom-small Cyber Security
-                    p.paragraph
-                        |DOLL has developed active cyberdefense systems, and has evaluated these systems on testbeds 
-                        |that are able to simulate a variety of cyberattacks including denial of service, corruption through malware, 
-                        |exfiltration, and process termination.  DOLL's approach is intelligent and dynamic in that it treats an 
-                        |attack as a battle for which defensive missions must be planned, and analysis and compensation 
-                        |resources must be allocated in an optimal manner.  Thus, the approach leverages DOLL's Mission Modeling technology.
-
-                    a.btn-text(href="#popup-cyber-security") Learn more &rarr;
-                .col-1-of-3
-                    .composition
-                        <img src="img/solutions/cyberSecurity.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
-
-            .row
-                .col-2-of-3
-                    h3.heading-tertiary.u-margin-bottom-small Social Intelligence
-                    p.paragraph
-                        | Artificial Intelligence (A.I.) and Autonomous Robotics are advancing rapidly and becoming robust and reliable in a number offields, 
-                        | but there remains much to be done before intelligent robots can work together with us as assistants. 
-                        | Today, most robots are either teleoperated or perform precisely definedmissions. In many cases the humanoverhead required to use a 
-                        | robot exceeds the usefulness of having it. 
-                        | There is a clear need for human-robot teams in which humans and robots work side-by-side.    
-
-                    a.btn-text(href="#popup-social-intelligence") Learn more &rarr;
-                .col-1-of-3
-                    .composition
-                        <img src="img/solutions/socialIntelligence.jpg" alt="Photo 4" class="composition__photo composition__photo--p4">
-
-
+            each solution in solutions
+                .row
+                    .col-2-of-3
+                        h3.heading-tertiary.u-margin-bottom-small #{solution.name}
+                        p.paragraph #{solution.shortDescription}
+                        a.btn-text(href=`#popup-${solution._id}`) Learn more &rarr;    
+                    .col-1-of-3
+                        .composition
+                            img(src=`https://drive.google.com/thumbnail?id=${solution.image}` alt=`${solution.name}` class="composition__photo composition__photo--p1")
         .section-stories
-            //- .bg-video
             .u-center-text.u-margin-bottom-big
                 h2.heading-secondary.green Latest Updates from DOLL
 
@@ -112,51 +61,24 @@ block content
                 a.btn-text(href="/newsandprojects#press") Read all news &rarr;
 
 
-    .popup#popup-active-perception
-        .popup__content
-            .popup__right
-                <a href="#section-about" class="popup__close">&times;</a>
-                <h2 class="heading-secondary u-margin-bottom-small">ACTIVE PERCEPTION</h2>
-                <h3 class="heading-tertiary u-margin-bottom-small">Dynamic Active Perception approach is used to actively and effectively allocate and focus sensing and action resources.</h3>
-                <p class="popup__text">
-                    | In most existing machine perception systems, the perception components are statically configured, so that sensor data is processed in the same, bottom-up manner each sensing cycle. The parameters of components in such a system are also statically tuned to operate optimally under very specific conditions. If higher level goals, context, or the environment change, the specific conditions for which the static configuration is intended may no longer hold. As a result, the static systems are prone to error because they cannot adapt to the new conditions; they are too inflexible.<br>
-                    | <br> In addition to their inflexibility, existing machine perception systems are often not well integrated into the autonomous systems to which they provide information. As a result, they are unaware of the autonomous system’s overall goals, and therefore, cannot make intelligent observation prioritization decisions in support of these goals. In particular, it may not be necessary or useful for the perception system to be aware of every aspect of a situation, and it may be detrimental, due to resource contention and time limits, to the overall goal.<br>
-                    | <br> DOLL addresses these challenges using a dynamic Active Perception approach in which reasoning about context is used to actively and effectively allocate and focus sensing and action resources. This system reasons about dynamically changing goals, contexts, and conditions, and therefore, is able to change to a more appropriate process flow configuration, or to better parameter settings in an intelligent way. The Active Perception approach prioritizes the system’s overall goals, so that perception and state-changing actions are optimally combined to achieve the goals. As a result the approach is more robust to environmental uncertainty.<br>
-                    | <br> Active perception draws on models to inform context-dependent tuning of sensors, direct sensors towards phenomena of greatest interest, to follow up initial alerts from cheap, inaccurate sensors with targeted use of expensive, accurate sensors, and to intelligently combine results from sensors with context information to produce increasingly accurate results. The model-based approach deploys sensors to build structured interpretations of situations to meet mission-centered decision making requirements.
-                </p>
-
-    .popup#popup-mission-modeling
-        .popup__content
-            .popup__right
-                <a href="#section-about" class="popup__close">&times;</a>
-                <h2 class="heading-secondary u-margin-bottom-small">MISSION MODELING</h2>
-                <h3 class="heading-tertiary u-margin-bottom-small">Dynamic Active Perception approach is used to actively and effectively allocate and focus sensing and action resources.</h3>
-                <p class="popup__text">
-                    | In order to plan for and accomplish a complex set of interdependent activities, it is useful to have a specification of the goals and the activities that need to be accomplished to satisfy those goals. Motivated by the world of military planning, we use the term Mission Modeling to refer to the activity of capturing and representing all of the goals, preferences, and constraints, along with the detailed execution plan that satisfies each of them. DOLL's specification-based mission modeling approach supports the top-down generation of detailed interdependent activity plans, an execution mechanism that ensures that all activities are performed in the correct order, and provides continuous assessment of the status of all subparts of the plan along with the aggregate status of the overall mission. Using this assessment mechanism during plan execution, the contributing impact of the successful and unsuccessful mission activities can be determined, allowing the overall mission success to be maximized. Since assessment is performed continuously, mission resiliency is achieved. For a resource-constrained problem, these assessments allow the user and/or the system to drop those activities from the plan that have the least negative impact on the overall mission success. DOLL has initially applied this approach to planning problems in the military cybersecurity domain.  It is also applicable to any problem that can be decomposed into a collection of subtasks. For example, it can be applied to commercial domains such as manufacturing, and diagnosis and repair.
-                </p>
-
-    .popup#popup-cyber-security
-        .popup__content
-            .popup__right
-                <a href="#section-about" class="popup__close">&times;</a>
-                <h2 class="heading-secondary u-margin-bottom-small">CYBER SECURITY</h2>
-                <h3 class="heading-tertiary u-margin-bottom-small">Dynamic Active Perception approach is used to actively and effectively allocate and focus sensing and action resources.</h3>
-                <p class="popup__text">
-                    | DOLL has developed active cyberdefense systems, and has evaluated these systems on testbeds that are able to simulate a variety of cyberattacks including denial of service, corruption through malware, exfiltration, and process termination.  DOLL's approach is intelligent and dynamic in that it treats an attack as a battle for which defensive missions must be planned, and analysis and compensation resources must be allocated in an optimal manner.  Thus, the approach leverages DOLL's Mission Modeling technology. <br>
-                    | <br> The system incorporates sensor fusion filters, hypothesis generators, and state estimators to develop mission situation awareness.  The system uses these first to respond tactically to signs of corruption in key components, and strategically to look for longer attack plans in progress. The first step in the tactical processing is to identify the effect on mission components’ health of the events identified.  Included in the state being estimated is the level of trust of components.  Based on hypotheses regarding cyber-attack patterns, and subsequent tests to confirm or refute an attack, the system may decide that a particular component can no longer be trusted. <br>
-                    | <br> The system also includes resource allocation capabilities that assign hosts to tasks.  One way of responding to an attack is to re-configure components, possibly instantiating a component with a particular task on a new host, if the old host is thought to be compromised. Information about task constraints and priorities is used to decide optimal allocation of hosts to component task combinations.
-                </p>
-
-
-    .popup#popup-social-intelligence
-        .popup__content.non-decoration
-            .popup__right
-                <a href="#section-about" class="popup__close">&times;</a>
-                <h2 class="heading-secondary u-margin-bottom-small">SOCIAL INTELLIGENCE</h2>
-                <h3 class="heading-tertiary u-margin-bottom-small">Dynamic Active Perception approach is used to actively and effectively allocate and focus sensing and action resources.</h3>
-                <p class="popup__text">
-                    | Please check out the following file to learn more: 
-                    a(href="/img/solutions/socialIntelligencePDF.pdf") Click here to access the PDF file.
+    each solution in solutions
+        .popup(id=`popup-${solution._id}`)
+            .popup__content.non-decoration
+                .popup__right
+                    <a href="#section-about" class="popup__close">&times;</a>
+                    <h2 class="heading-secondary u-margin-bottom-small">#{solution.name}</h2>
+                    //- <h3 class="heading-tertiary u-margin-bottom-small">Dynamic Active Perception approach is used to actively and effectively allocate and focus sensing and action resources.</h3>
+                    - const paragraphs = solution.longDescription.split('\n')
+                    p.popup__text
+                        each p in paragraphs
+                            if (p.includes('<a>'))
+                                - const a = p.split('<a>')
+                                | #{a[0]}
+                                a(href=`${a[1]}`) #{a[2]}
+                                | <br>
+                            else 
+                                | #{p}
+                                | <br>
 
 block footer
     include __footer

@@ -4,6 +4,7 @@ const Post = require('../models/postModel');
 const Project = require('../models/projectModel');
 const Person = require('../models/personModel');
 const Update = require('../models/updateDOLLModel');
+const Solution = require('../models/solutionModel');
 
 
 const renderPage = (page) => (req, res, next) => {
@@ -22,9 +23,12 @@ exports.getHome = catchAsync(async (req, res, next) => {
     updates = updates.slice(0,5);
   }
 
+  const solutions = await Solution.find();
+
    // 2) Render template usng data from step 1
   res.status(200).render('home', {
     updates,
+    solutions,
   });
 });
 
