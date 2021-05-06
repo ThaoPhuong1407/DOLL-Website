@@ -4,8 +4,10 @@
 /* ------------------------------------------ */
 const express = require('express');
 const personController = require('../controllers/personController');
+const authController = require('../controllers/authController');
 const router = express.Router();
 
+router.use(authController.protect);
 router
   .route('/')
   .get(personController.getAllPeople)

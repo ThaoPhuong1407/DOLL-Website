@@ -15,7 +15,7 @@ const personSchema = new mongoose.Schema(
       require: [true, 'a person must have a description'],
     },
     image: {
-      type: [String],
+      type: String,
     },
     createdAt: {
       type: Date,

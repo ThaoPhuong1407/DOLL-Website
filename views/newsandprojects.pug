@@ -19,31 +19,26 @@ block content
                                 i.feature-box__icon(class=`icon-${projects[3 * i].icon}`)
                                 h3.heading-tertiary.u-margin-bottom-small #{projects[3 * i].name}
                                 p.feature-box__text #{projects[3 * i].shortDescription}
-                                a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+                                a.btn-text.u-margin-top-medium(href=`/project/${projects[3 * i].slug}`) Learn more &rarr;
                     - if (3 * i +1 < projects.length)
                         .col-1-of-3
                             .feature-box
                                 i.feature-box__icon(class=`icon-${projects[3 * i + 1].icon}`)
                                 h3.heading-tertiary.u-margin-bottom-small #{projects[3 * i + 1].name}
                                 p.feature-box__text #{projects[3 * i + 1].shortDescription}
-                                a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+                                a.btn-text.u-margin-top-medium(href=`/project/${projects[3 * i + 1].slug}`) Learn more &rarr;
                     - if (3 * i + 2 < projects.length)
                         .col-1-of-3
                             .feature-box
                                 i.feature-box__icon(class=`icon-${projects[3 * i + 2].icon}`)
                                 h3.heading-tertiary.u-margin-bottom-small #{projects[3 * i + 2].name}
                                 p.feature-box__text #{projects[3 * i + 2].shortDescription}
-                                a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+                                a.btn-text.u-margin-top-medium(href=`/project/${projects[3 * i + 2].slug}`) Learn more &rarr;
             - }
 
-            //- .col-1-of-3
-            //-     .feature-box
-            //-         i.feature-box__icon.icon-basic-settings
-            //-         h3.heading-tertiary.u-margin-bottom-small DCRYP
-            //-         p.feature-box__text
-            //-             //- | Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            //-             //- | Non praesentium iusto rem suscipit voluptatem reprehenderit tempora. 
-            //-         a.btn-text.u-margin-top-medium(href="/construction") Learn more &rarr;
+            if user
+                .row.submitInfo
+                    a.btn-text.u-margin-top-medium(href="/input/project")= `Add a new project`.toUpperCase()
 
         .section-future.news#press
             .u-center-text.u-margin-bottom-medium
@@ -54,6 +49,10 @@ block content
                     a(href=`/post/${press.slug}`)
                         h2 #{press.title}
                         p #{press.description}
+
+            if user
+                .row.submitInfo
+                    a.btn-text.u-margin-top-medium(href="/input/post")= `Add a new press`.toUpperCase()
 
         .section-stories#updates
             //- .bg-video
@@ -66,13 +65,18 @@ block content
                 if (i > 5)
                     .row#more
                         .story
-                            if(update.body === "")
+                            if(update.body === "" || update.body.length < 50)
                                 .story__text.non-decoration
                                     h3.heading-tertiary.u-margin-bottom-small #{update.title}
                                     p.feature-box__text
-                                        //- em DOLL — #{update.dateCreated}
                                         em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1}`}
-                                    p.feature-box__text
+                                    p.feature-box__text 
+                                        != update.body
+
+                                    if user
+                                        .crud.submitInfoRight
+                                            a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/update-update-${update._id}`)= `Update`.toUpperCase()
+                                            a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`update-delete-${update._id}`)= `Delete`.toUpperCase()
                             else
                                 figure.story__shape.u-margin-right-small 
                                     img.story__img(src="img/News2.jpg" alt="place holder")
@@ -80,25 +84,27 @@ block content
                                 .story__text.non-decoration
                                     h3.heading-tertiary.u-margin-bottom-small #{update.title}
                                     p.feature-box__text
-                                        //- em DOLL — #{update.dateCreated}
                                         em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1}`}
                                     p.feature-box__text
-                                        if (update.body.includes('<a>'))
-                                            - const a = update.body.split('<a>')
-                                            | #{a[0]}
-                                            a(href=`${a[1]}`) #{a[2]}
-                                        else 
-                                            | #{update.body}
+                                        != update.body
+                                    if user
+                                        .crud.submitInfoRight
+                                            a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/update-update-${update._id}`)= `Update`.toUpperCase()
+                                            a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`update-delete-${update._id}`)= `Delete`.toUpperCase()
                 else 
                     .row
                         .story
-                            if(update.body === "")
+                            if(update.body === "" || update.body.length < 50)
                                 .story__text.non-decoration
                                     h3.heading-tertiary.u-margin-bottom-small #{update.title}
                                     p.feature-box__text
-                                        //- em DOLL — #{update.dateCreated}
                                         em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1}`}
-                                    p.feature-box__text
+                                    p.feature-box__text 
+                                        != update.body
+                                    if user
+                                        .crud.submitInfoRight
+                                            a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/update-update-${update._id}`)= `Update`.toUpperCase()
+                                            a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`update-delete-${update._id}`)= `Delete`.toUpperCase()
                             else
                                 figure.story__shape.u-margin-right-small 
                                     img.story__img(src="img/News2.jpg" alt="place holder")
@@ -106,20 +112,20 @@ block content
                                 .story__text.non-decoration
                                     h3.heading-tertiary.u-margin-bottom-small #{update.title}
                                     p.feature-box__text
-                                        //- em DOLL — #{update.dateCreated}
                                         em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1}`}
                                     p.feature-box__text
-                                        if (update.body.includes('<a>'))
-                                            - const a = update.body.split('<a>')
-                                            | #{a[0]}
-                                            a(href=`${a[1]}`) #{a[2]}
-                                        else 
-                                            | #{update.body}
+                                        != update.body
+                                    if user
+                                        .crud.submitInfoRight
+                                            a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/update-update-${update._id}`)= `Update`.toUpperCase()
+                                            a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`update-delete-${update._id}`)= `Delete`.toUpperCase()
 
             .u-center-text.u-margin-top-huge
                 a.btn-text#show(href="#updates") Show more
 
-    script(src='js/showmore.js')
+            if user
+                .row.submitInfo
+                    a.btn-text.u-margin-top-medium(href="/input/update")= `Add a new DOLL update`.toUpperCase()
 
 block footer
     include __footer

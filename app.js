@@ -1,6 +1,7 @@
 const express   = require('express');
 const path      = require('path');
 const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
 
 // Error related
 const AppError = require('./utils/appError');
@@ -8,6 +9,7 @@ const globalErrorHandler = require('./controllers/errorController');
 
 // Routes related 
 const viewRouter = require('./routes/viewRoutes');
+const userRouter = require('./routes/userRoutes');
 const postRouter = require('./routes/postRoutes');
 const projectRouter = require('./routes/projectRoutes');
 const personRouter = require('./routes/personRoutes');
@@ -16,12 +18,18 @@ const solutionRouter = require('./routes/solutionRoutes');
 
 const app = express();
 
-//  Setting up pug templates
 // ideally, all request info should be in the req, but express doesn't do that ==> we need a middleware: express.json()
-app.use(express.json({ limit: '10kb' })); // Need this for POST request
+app.use(express.json({ limit: '10kb' })); // parse data from body
+app.use(cookieParser()); // parse data from cookie
 app.set('view engine', 'pug'); // Express framework supports pug template
 app.set('views', path.join(__dirname, 'views')); // view engine is called "views" in Express. Set "views" to path ./views
 app.use(express.static(path.join(__dirname, 'public/'))); // Serving static files from the public folders
+
+// Middleware for debugging purposes 
+app.use((req, res, next) => {
+  // console.log(req.cookies);
+  next();
+});
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
@@ -32,6 +40,7 @@ if (process.env.NODE_ENV === 'development') {
 /*    ROUTES      */
 /* -------------- */
 app.use('/', viewRouter); // templates
+app.use('/api/users', userRouter); 
 app.use('/api/post', postRouter); 
 app.use('/api/project', projectRouter); 
 app.use('/api/person', personRouter); 

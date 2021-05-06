@@ -37,3 +37,19 @@ body {
   background-color: $color-primary;
   color: $color-white;
 }
+
+.submitInfo {
+  text-align: center;
+}
+
+.submitInfoRight {
+  text-align: right;
+  margin-right: 10rem !important;
+}
+
+.internal {
+  color: #fff;
+  padding: 3rem;
+  text-align: center;
+  background: rgba($color-fourth-dark, 1);
+}

@@ -4,8 +4,10 @@
 /* ------------------------------------------ */
 const express = require('express');
 const solutionController = require('../controllers/solutionController');
+const authController = require('../controllers/authController');
 const router = express.Router();
 
+router.use(authController.protect);
 router
   .route('/')
   .get(solutionController.getAllSolutions)

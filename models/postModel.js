@@ -24,9 +24,9 @@ const postSchema = new mongoose.Schema(
       type: String,
       require: [true, 'a post must have a body text'],
     },
-    image: {
-      type: [String],
-    },
+    // image: {
+    //   type: [String],
+    // },
     createdAt: {
       type: Date,
       default: Date.now(),

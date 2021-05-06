@@ -1,0 +1,196 @@
+extends base
+
+block content
+    main.main 
+        .section-input
+            .row
+                .input
+                    .input__form
+                        - const typeBreakDown = type.split('-')
+                        if (oldData)    
+                            .slug(id=`${oldData.slug}`)
+                            .objID(id=`${oldData._id}`)
+
+                        if (typeBreakDown[0] === 'project')
+                            form.input-form(action="#" id=`${type}`)
+                                .u-margin-bottom-medium
+                                    h2.heading-secondary Add a new project
+                                .form__group
+                                    if (oldData)
+                                        input#name.form__input(type="text" placeholder="Project Name" value=`${oldData.name}`)
+                                    else 
+                                        input#name.form__input(type="text" placeholder="Project Name")
+                                    label.form__label(for="name") Project Name
+
+                                .form__group
+                                    input#startDate.form__input(type="date" placeholder="Project Start Date")
+                                    label.form__label(for="startDate") Project Start Date 
+
+                                .form__group
+                                    input#endDate.form__input(type="date" placeholder="Project End Date")
+                                    label.form__label(for="endDate") Project End Date. Ignore if in progress.
+
+                                .form__group
+                                    if (oldData)
+                                        textarea#shortDescription.form__input(rows="5" placeholder="Short Description") #{oldData.shortDescription}
+                                    else 
+                                        textarea#shortDescription.form__input(rows="5" placeholder="Short Description.")
+                                    label.form__label(for="shortDescription") Short Description
+
+                                .form__group
+                                    if (oldData)
+                                        textarea#body.form__input.myTextArea(rows="30" placeholder="Text Body") #{oldData.body}
+                                    else 
+                                        textarea#body.form__input.myTextArea(rows="30" placeholder="Text Body")
+                                    label.form__label(for="body") Text Body
+
+
+                                .form__group
+                                    if (oldData)
+                                        input#icon.form__input(type="text" placeholder="Icon Name" value=`${oldData.icon}`)
+                                    else 
+                                        input#icon.form__input(type="text" placeholder="Icon Name") 
+                                    label.form__label(for="icon") Icon name
+
+                                .form_group
+                                    button.btn.btn--green Submit
+
+                        else if (typeBreakDown[0] === 'post')
+                            form.input-form(action="#" id=`${type}`)
+                                .u-margin-bottom-medium
+                                    h2.heading-secondary Add a new press/post
+
+                                .form__group
+                                    if (oldData)
+                                        input#title.form__input(type="text" placeholder="Title" value=`${oldData.title}`)
+                                    else 
+                                        input#title.form__input(type="text" placeholder="Title")
+                                    label.form__label(for="title") Title
+
+                                .form__group
+                                    if (oldData)
+                                        input#author.form__input(type="text" placeholder="Author" value=`${oldData.author}`)
+                                    else 
+                                        input#author.form__input(type="text" placeholder="Author")
+                                    label.form__label(for="author") Author
+
+                                .form__group
+                                    if (oldData)
+                                        input#source.form__input(type="text" placeholder="Source" value=`${oldData.source}`)
+                                    else 
+                                        input#source.form__input(type="text" placeholder="Source")
+                                    label.form__label(for="source") Example: New York Times, Dynamic Object Language Labs Inc, etc.
+
+                                .form__group
+                                    input#dateCreated.form__input(type="date" placeholder="Date Created")
+                                    label.form__label(for="dateCreated") Date Created
+
+                                .form__group
+                                    if (oldData)
+                                        textarea#body.form__input.myTextArea(rows="30" placeholder="") #{oldData.body}
+                                    else 
+                                        textarea#body.form__input.myTextArea(rows="30" placeholder="  Body")
+                                    label.form__label(for="body") Text Body
+
+                                .form_group
+                                    button.btn.btn--green Submit
+
+                        else if (typeBreakDown[0] === 'update')
+                            form.input-form(action="#" id=`${type}`)
+                                .u-margin-bottom-medium
+                                    h2.heading-secondary Add a new DOLL update
+
+                                .form__group
+                                    if (oldData)
+                                        input#title.form__input(type="text" placeholder="Title" value=`${oldData.title}`)
+                                    else 
+                                        input#title.form__input(type="text" placeholder="Title")
+                                    label.form__label(for="title") Title
+
+                                .form__group
+                                    input#dateCreated.form__input(type="date" placeholder="Date Created")
+                                    label.form__label(for="dateCreated") Date Created
+
+                                .form__group
+                                    if (oldData)
+                                        textarea#body.form__input.myTextArea(rows="30" placeholder="") #{oldData.body}
+                                    else 
+                                        textarea#body.form__input.myTextArea(rows="30" placeholder="Body. Please avoid headers and images, stick with the regular paragraph.")
+                                    label.form__label(for="body") Text Body
+
+                                .form_group
+                                    button.btn.btn--green Submit
+
+                        else if(typeBreakDown[0] === 'solution')
+                            form.input-form(action="#" id=`${type}`)
+                                .u-margin-bottom-medium
+                                    h2.heading-secondary Add a new DOLL solution
+                                .form__group
+                                    if (oldData)
+                                        input#name.form__input(type="text" placeholder="Name" value=`${oldData.name}`)
+                                    else 
+                                        input#name.form__input(type="text" placeholder="Name")
+                                    label.form__label(for="name") Name
+
+                                .form__group
+                                    if (oldData)
+                                        textarea#shortDescription.form__input(rows="5" placeholder="") #{oldData.shortDescription}
+                                    else 
+                                        textarea#shortDescription.form__input(rows="5" placeholder="Short Description")
+                                    label.form__label(for="shortDescription") Short Description
+
+                                .form__group
+                                    if (oldData)
+                                        textarea#longDescription.form__input.myTextArea(rows="30" placeholder="") #{oldData.longDescription}
+                                    else 
+                                        textarea#longDescription.form__input.myTextArea(rows="30" placeholder="Text Body. Please only use paragraph style. Avoid headers!")
+                                    label.form__label(for="longDescription") Text Body
+
+                                .form__group
+                                    if (oldData)    
+                                        input#image.form__input(type="text" placeholder="" value=`${oldData.image}`)
+                                    else 
+                                        input#image.form__input(type="text" placeholder="Image ID, only 1 id allowed.")
+                                    label.form__label(for="image") Image ID, only 1 id allowed.
+
+                                .form_group
+                                    button.btn.btn--green Submit
+
+                        else if (typeBreakDown[0] === 'employee')
+                            form.input-form(action="#" id=`${type}`)
+                                .u-margin-bottom-medium
+                                    h2.heading-secondary Add a new employee
+
+                                .form__group
+                                    if (oldData)    
+                                        input#name.form__input(type="text" placeholder="Name" value=`${oldData.name}`)
+                                    else
+                                        input#name.form__input(type="text" placeholder="Employee Name")
+                                    label.form__label(for="name") Employee Name
+
+                                .form__group
+                                    if (oldData)    
+                                        input#jobTitle.form__input(type="text" placeholder="" value=`${oldData.jobTitle}`)
+                                    else
+                                        input#jobTitle.form__input(type="text" placeholder="Job Title (with time period for ex-employee)")
+                                    label.form__label(for="jobTitle") Job Title
+
+                                .form__group
+                                    if (oldData)    
+                                        textarea#description.form__input.myTextArea(rows="5" placeholder="") #{oldData.description}
+                                    else
+                                        textarea#description.form__input.myTextArea(rows="5" placeholder="Short Description about the employee. Please only use paragraph style. Avoid headers and images!")
+                                    label.form__label(for="description") Description
+
+                                .form__group
+                                    if (oldData)    
+                                        input#image.form__input(type="text" placeholder="" value=`${oldData.image}`)
+                                    else 
+                                        input#image.form__input(type="text" placeholder="Image ID")
+                                    label.form__label(for="image") Image ID, only 1 id allowed.
+
+                                .form_group
+                                    button.btn.btn--green Submit
+
+
+

@@ -37,93 +37,116 @@ block content
         .u-center-text.u-margin-bottom-big
             h2.heading-secondary Meet the team
 
-        - for (var i = 0, row = people.length/3; i < row; i++) {
-            .row
-                - if (3 * i < people.length)
-                    .col-1-of-3
-                        .card
-                            .card__side.card__side--front
-                                if (people[3 * i].image.length === 0)
-                                    .card__picture.card__picture--empty 
-                                else 
-                                    .card__picture
-                                        img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i].image[0]}` alt=`${people[3 * i].name}`)
-                                h4.card__heading
-                                    span.card__heading-span #{people[3 * i].name}
-                                .card__title
-                                    <ul> <li>#{people[3 * i].jobTitle}</li> </ul>
-                            .card__side.card__side--back.card__side--back-1
-                                .card__cta 
-                                    .card__details
-                                        - const paragraph = people[3 * i].description.split('\n')
-                                        for p in paragraph
-                                            if p.includes('<a>')
-                                                - const a = p.split('<a>');
-                                                    p.card__description #{a[0]} 
-                                                        a(href=`${a[1]}`) #{a[2]}
-                                                        span.card__description #{a[3]} 
-                                                <br>
-                                            else 
-                                                p.card__description= p
-                                                <br>
+        if (people.length !== 0)
+            - for (var i = 0, row = people.length/3; i < row; i++) {
+                .row
+                    - if (3 * i < people.length)
+                        .col-1-of-3
+                            if user
+                                .crud.submitInfo
+                                    a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/employee-update-${people[3 * i]._id}`)= `Update`.toUpperCase()
+                                    a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`person-delete-${people[3 * i]._id}`)= `Delete`.toUpperCase()
+                            .card
+                                .card__side.card__side--front
+                                    if (!people[3 * i].image || people[3 * i].image === 'undefined')
+                                        .card__picture.card__picture--empty 
+                                    else 
+                                        .card__picture
+                                            img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i].image}` alt=`${people[3 * i].name}`)
+                                    h4.card__heading
+                                        span.card__heading-span #{people[3 * i].name}
+                                    .card__title
+                                        <ul> <li>#{people[3 * i].jobTitle}</li> </ul>
+
+                                .card__side.card__side--back.card__side--back-1
+                                    .card__cta 
+                                        .card__details
+                                            p.paragraph !{people[3 * i].description}
+                                            //- - const paragraph = people[3 * i].description.split('\n')
+                                            //- for p in paragraph
+                                            //-     if p.includes('<a>')
+                                            //-         - const a = p.split('<a>');
+                                            //-             p.card__description #{a[0]} 
+                                            //-                 a(href=`${a[1]}`) #{a[2]}
+                                            //-                 span.card__description #{a[3]} 
+                                            //-         <br>
+                                            //-     else 
+                                            //-         p.card__description= p
+                                            //-         <br>
 
 
-                - if (3 * i + 1 < people.length)
-                    .col-1-of-3
-                        .card
-                            .card__side.card__side--front
-                                if (people[3 * i + 1].image.length === 0)
-                                    .card__picture.card__picture--empty 
-                                else
-                                    .card__picture
-                                        img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i + 1].image[0]}` alt=`${people[i].name}`)
-                                h4.card__heading
-                                    span.card__heading-span #{people[3 * i + 1].name}
-                                .card__title
-                                    <ul><li>#{people[3 * i + 1].jobTitle}</li></ul>
-                            .card__side.card__side--back.card__side--back-1
-                                .card__cta 
-                                    .card__details
-                                        - const paragraph = people[3 * i + 1].description.split('\n')
-                                        for p in paragraph
-                                            if p.includes('<a>')
-                                                - const a = p.split('<a>');
-                                                    p.card__description #{a[0]} 
-                                                        a(href=`${a[1]}`) #{a[2]}
-                                                        span.card__description #{a[3]} 
-                                                <br>
-                                            else 
-                                                p.card__description= p
-                                                <br>
 
-                - if (3 * i + 2 < people.length)
-                    .col-1-of-3
-                        .card
-                            .card__side.card__side--front
-                                if (people[3 * i + 2].image.length === 0)
-                                    .card__picture.card__picture--empty 
-                                else
-                                    .card__picture 
-                                        img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i + 2].image[0]}` alt=`${people[i].name}`)
-                                h4.card__heading
-                                    span.card__heading-span #{people[3 * i + 2].name}
-                                .card__title
-                                    <ul><li>#{people[3 * i + 2].jobTitle}</li></ul>
-                            .card__side.card__side--back.card__side--back-1
-                                .card__cta 
-                                    .card__details
-                                        - const paragraph = people[3 * i + 2].description.split('\n')
-                                        for p in paragraph
-                                            if p.includes('<a>')
-                                                - const a = p.split('<a>');
-                                                    p.card__description #{a[0]} 
-                                                        a(href=`${a[1]}`) #{a[2]}
-                                                        span.card__description #{a[3]} 
-                                                <br>
-                                            else 
-                                                p.card__description= p
-                                                <br>
-            - }
+                    - if (3 * i + 1 < people.length)
+                        .col-1-of-3
+                            if user
+                                .crud.submitInfo
+                                    a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/employee-update-${people[3 * i + 1]._id}`)= `Update`.toUpperCase()
+                                    a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`person-delete-${people[3 * i + 1]._id}`)= `Delete`.toUpperCase()
+                            .card
+                                .card__side.card__side--front
+                                    if (!people[3 * i + 1].image || people[3 * i + 1].image === 'undefined')
+                                        .card__picture.card__picture--empty 
+                                    else
+                                        .card__picture
+                                            img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i + 1].image}` alt=`${people[3 * i + 1].name}`)
+                                    h4.card__heading
+                                        span.card__heading-span #{people[3 * i + 1].name}
+                                    .card__title
+                                        <ul><li>#{people[3 * i + 1].jobTitle}</li></ul>
+                                .card__side.card__side--back.card__side--back-1
+                                    .card__cta 
+                                        .card__details
+                                            p.paragraph !{people[3 * i + 1].description}
+                                            //- - const paragraph = people[3 * i + 1].description.split('\n')
+                                            //- for p in paragraph
+                                            //-     if p.includes('<a>')
+                                            //-         - const a = p.split('<a>');
+                                            //-             p.card__description #{a[0]} 
+                                            //-                 a(href=`${a[1]}`) #{a[2]}
+                                            //-                 span.card__description #{a[3]} 
+                                            //-         <br>
+                                            //-     else 
+                                            //-         p.card__description= p
+                                            //-         <br>
+
+                    - if (3 * i + 2 < people.length)
+                        .col-1-of-3
+                            if user
+                                .crud.submitInfo
+                                    a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/employee-update-${people[3 * i + 2]._id}`)= `Update`.toUpperCase()
+                                    a.btn-text.u-margin-top-medium.u-margin-small.delete(href='#' id=`person-delete-${people[3 * i + 2]._id}`)= `Delete`.toUpperCase()
+                            .card
+                                .card__side.card__side--front
+                                    if (!people[3 * i + 2].image || people[3 * i + 2].image === 'undefined')
+                                        .card__picture.card__picture--empty 
+                                    else
+                                        .card__picture 
+                                            img.card__picture--general(src=`https://drive.google.com/thumbnail?id=${people[3 * i + 2].image}` alt=`${people[3 * i + 2].name}`)
+                                    h4.card__heading
+                                        span.card__heading-span #{people[3 * i + 2].name}
+                                    .card__title
+                                        <ul><li>#{people[3 * i + 2].jobTitle}</li></ul>
+                                .card__side.card__side--back.card__side--back-1
+                                    .card__cta 
+                                        .card__details
+                                            p.paragraph !{people[3 * i + 2].description}
+
+                                            //- - const paragraph = people[3 * i + 2].description.split('\n')
+                                            //- for p in paragraph
+                                            //-     if p.includes('<a>')
+                                            //-         - const a = p.split('<a>');
+                                            //-             p.card__description #{a[0]} 
+                                            //-                 a(href=`${a[1]}`) #{a[2]}
+                                            //-                 span.card__description #{a[3]} 
+                                            //-         <br>
+                                            //-     else 
+                                            //-         p.card__description= p
+                                            //-         <br>
+                    - }
+
+        if user
+            .row.submitInfo
+                a.btn-text.u-margin-top-medium(href="/input/employee")= `Add a new employee`.toUpperCase()
 
 block footer
     include __footer

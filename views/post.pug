@@ -8,29 +8,33 @@ block content
                 img.header__logo(src="/img/logo_white_doll.png" alt="logo")
         .header__text-box.u-margin-top-huge
             h1.heading-primary
-                span.heading-primary--title= title
-                h2.color-white.h2-size By #{author} | #{source}
-                h3.color-white.h3-size #{dateCreated.toLocaleString('en-us', {month: 'long', day: 'numeric',year: 'numeric'})}
+                if (type === 'post')
+                    span.heading-primary--title= title
+                    h2.color-white.h2-size By #{author} | #{source}
+                    if (dateCreated !== null)
+                        h3.color-white.h3-size #{dateCreated.toLocaleString('en-us', {month: 'long', day: 'numeric',year: 'numeric'})}
+                    if user
+                        .crud.submitInfo
+                            a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/post-update-${postId}`)= `Update`.toUpperCase()
+                            a.btn-text.u-margin-top-medium.u-margin-small.delete(href='#' id=`post-delete-${postId}`)= `Delete`.toUpperCase()
+
+                else if (type === 'project')
+                    span.heading-primary--title= title
+                    h2.color-white.h3-size From #{dateCreated.toLocaleString('en-us', {month: 'long', day: 'numeric',year: 'numeric'})} 
+                        if (dateEnd !== null)
+                            | to #{dateEnd.toLocaleString('en-us', {month: 'long', day: 'numeric',year: 'numeric'})} 
+                        else 
+                            | to Present     
+                    if user
+                        .crud.submitInfo
+                            a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/project-update-${projectId}`)= `Update`.toUpperCase()
+                            a.btn-text.u-margin-top-medium.u-margin-small.delete(href='#' id=`project-delete-${projectId}`)= `Delete`.toUpperCase()
+
     section.non-decoration
         .row.section-post 
             .col-3-of-4
-                - let position = 'left'
-                - const paragraphs = body.split('\n')
-                    for p in paragraphs
-                        if (image.length !== 0)
-                            img(class='post-photo-' + position src=`https://drive.google.com/thumbnail?id=${image[0]}` alt="Photo") 
-                            - image.shift()
-                            - position = (position === 'right') ? 'left' : 'right'
-                        if p.includes('h1')
-                            h1 #{p.replace("h1", "")}
-                        else if p.includes('<a>')
-                            - const a = p.split('<a>');
-                            p.paragraph #{a[0]} 
-                                a(href=`${a[1]}`) #{a[2]}
-                        else
-                            p.paragraph #{p}
-
-                //- <iframe width="560" height="315" src="https://www.youtube.com/embed/SXdifzbQ8Ao?start=142" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                .wrapText
+                    != body
 
             .col-1-of-4.related-post
                 h2.h2-size Recent news
@@ -42,7 +46,7 @@ block content
 
                 h2.h2-size Recent projects
                 each project in allProjects
-                    a.block(href="/construction")= project.name
+                    a.block(href=`/project/${project.slug}`)= project.name
 
 
 

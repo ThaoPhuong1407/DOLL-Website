@@ -4,28 +4,24 @@
 /* ------------------------------------------ */
 const express = require('express');
 const viewController = require('../controllers/viewController');
+const authController = require('../controllers/authController');
 const router = express.Router();
 
 /* -------------- */
 /*    ROUTES      */
 /* -------------- */
+router.use(authController.isLoggedIn);
 router.get('/', viewController.getHome);
 router.get('/about', viewController.getAbout);
 router.get('/contact', viewController.getContact);
 router.get('/newsandprojects', viewController.getNewsProjects);
 router.get('/post/:slug', viewController.getPost);
+router.get('/project/:slug', viewController.getProject);
 router.get('/construction', viewController.getConstruction);
 
-// app.get('/post/1', (req, res)=> {
-//   res.status(200).render('post1', {
-//       test: 'Thao Phuong',
-//   });
-// });
+// Updating data
+router.get('/login', viewController.getLoginForm);
+router.get('/input/:type', viewController.getInputForm);
 
-// app.get('/post/2', (req, res)=> {
-//   res.status(200).render('post2', {
-//       test: 'Thao Phuong',
-//   });
-// });
 
 module.exports = router;

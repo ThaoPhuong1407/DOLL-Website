@@ -26,14 +26,19 @@ block content
                     .col-1-of-3
                         .composition
                             img(src=`https://drive.google.com/thumbnail?id=${solution.image}` alt=`${solution.name}` class="composition__photo composition__photo--p1")
-        .section-stories
+
+            if user
+                .row.submitInfo
+                    a.btn-text.u-margin-top-medium(href="/input/solution")= `Add a new solution`.toUpperCase()
+
+        section.section-stories
             .u-center-text.u-margin-bottom-big
                 h2.heading-secondary.green Latest Updates from DOLL
 
             each update in updates 
                 .row
                     .story
-                        if(update.body === "")
+                        if(update.body === "" || update.body.length < 50)
                             .story__text.non-decoration
                                 h3.heading-tertiary.u-margin-bottom-small #{update.title}
                                 p.feature-box__text
@@ -49,13 +54,13 @@ block content
                                 p.feature-box__text
                                     //- em DOLL — #{update.dateCreated}
                                     em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1}`}
-                                p.feature-box__text
-                                    if (update.body.includes('<a>'))
-                                        - const a = update.body.split('<a>')
-                                        | #{a[0]}
-                                        a(href=`${a[1]}`) #{a[2]}
-                                    else 
-                                        | #{update.body}
+                                p.feature-box__text !{update.body}
+                                    //- if (update.body.includes('<a>'))
+                                    //-     - const a = update.body.split('<a>')
+                                    //-     | #{a[0]}
+                                    //-     a(href=`${a[1]}`) #{a[2]}
+                                    //- else 
+                                    //-     | #{update.body}
 
             .u-center-text.u-margin-top-huge
                 a.btn-text(href="/newsandprojects#press") Read all news &rarr;
@@ -65,20 +70,15 @@ block content
         .popup(id=`popup-${solution._id}`)
             .popup__content.non-decoration
                 .popup__right
-                    <a href="#section-about" class="popup__close">&times;</a>
-                    <h2 class="heading-secondary u-margin-bottom-small">#{solution.name}</h2>
-                    //- <h3 class="heading-tertiary u-margin-bottom-small">Dynamic Active Perception approach is used to actively and effectively allocate and focus sensing and action resources.</h3>
-                    - const paragraphs = solution.longDescription.split('\n')
-                    p.popup__text
-                        each p in paragraphs
-                            if (p.includes('<a>'))
-                                - const a = p.split('<a>')
-                                | #{a[0]}
-                                a(href=`${a[1]}`) #{a[2]}
-                                | <br>
-                            else 
-                                | #{p}
-                                | <br>
+                    a(href="#section-about" class="popup__close") &times;
+                    h2(class="heading-secondary u-margin-bottom-small") #{solution.name}
+                    .popup__text 
+                        != solution.longDescription
+
+                    if user
+                        .row.submitInfoRight
+                            a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/solution-update-${solution._id}`)= `Update`.toUpperCase()
+                            a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`solution-delete-${solution._id}`)= `Delete`.toUpperCase()
 
 block footer
     include __footer

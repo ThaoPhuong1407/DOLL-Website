@@ -1,0 +1,23 @@
+extends base
+
+block content
+    main.main 
+        .section-login
+            .row
+                .login
+                    .login__form
+                        form.login-form(action="#")
+                            .u-margin-bottom-medium
+                                h2.heading-secondary Log into your account
+
+                            .form__group
+                                input#email.form__input(type="email" placeholder="Email Address" required)
+                                label.form__label(for="name") Email address
+
+
+                            .form__group
+                                input#password.form__input(type="password" placeholder="••••••••••" required)
+                                label.form__label(for="email") Password
+
+                            .form_group
+                                button.btn.btn--green Login

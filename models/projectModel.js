@@ -25,9 +25,9 @@ const projectSchema = new mongoose.Schema(
       type: String,
       require: [true, 'a post must have a body text'],
     },
-    image: {
-      type: [String],
-    },
+    // image: {
+    //   type: [String],
+    // },
     createdAt: {
       type: Date,
       default: Date.now(),
@@ -42,7 +42,7 @@ const projectSchema = new mongoose.Schema(
 
 // this keyword refers to the current document
 projectSchema.pre('save', function (next) {
-  this.slug = slugify(this.name, { lower: true });
+  this.slug = `${slugify(this.name, { lower: true })}-${this._id}`;
   next();
 });
 

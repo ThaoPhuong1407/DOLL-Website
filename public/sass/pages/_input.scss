@@ -1,0 +1,49 @@
+.section-input {
+  padding: 15rem 0;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right bottom,
+    $color-primary-light1,
+    $color-primary-light
+  );
+}
+
+.input {
+  background-size: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  justify-content: center;
+  align-items: center;
+
+  &__form {
+    width: 100%;
+    padding: 9rem;
+  }
+
+  .form {
+    &__group:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    &__input {
+      &:focus {
+        border-bottom: 3px solid $color-primary;
+
+        &:invalid {
+          border-bottom: 3px solid $color-primary-light;
+        }
+      }
+    }
+  }
+}
+
+.tinymceBody {
+  padding: 1.5rem 2rem;
+  margin: 10px;
+  border-radius: 2px;
+  background: rgba($color-white, 0.8);
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1.5rem;
+}
