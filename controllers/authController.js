@@ -28,7 +28,7 @@ const createAndSendToken = catchAsync(async (user, statusCode, res) => {
     user.password = undefined;
   
     if (process.env.Node_ENV === 'production') {
-      cookieOptions.secure = true;
+      cookieOptions.secure = false;
     }
   
     res.cookie('jwt', token, {
