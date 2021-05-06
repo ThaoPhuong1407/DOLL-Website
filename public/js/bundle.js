@@ -8448,23 +8448,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var login = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(email, password) {
-    var res;
+    var hostname, res;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.prev = 0;
-            _context.next = 3;
+            hostname = "" || location.hostname;
+            _context.prev = 1;
+            _context.next = 4;
             return (0, _axios.default)({
               method: 'POST',
-              url: 'http://www.dollabs.com/api/users/login',
+              url: "http://".concat(hostname, "/api/users/login"),
               data: {
                 email: email,
                 password: password
               }
             });
 
-          case 3:
+          case 4:
             res = _context.sent;
 
             if (res.data.status === 'success') {
@@ -8474,21 +8475,21 @@ var login = /*#__PURE__*/function () {
               }, 1500);
             }
 
-            _context.next = 11;
+            _context.next = 12;
             break;
 
-          case 7:
-            _context.prev = 7;
-            _context.t0 = _context["catch"](0);
+          case 8:
+            _context.prev = 8;
+            _context.t0 = _context["catch"](1);
             alert(_context.t0.response.data.message);
             console.log(_context.t0.response);
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 7]]);
+    }, _callee, null, [[1, 8]]);
   }));
 
   return function login(_x, _x2) {
@@ -8500,40 +8501,41 @@ exports.login = login;
 
 var logout = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-    var res;
+    var hostname, res;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            _context2.prev = 0;
-            _context2.next = 3;
+            hostname = "" || location.hostname;
+            _context2.prev = 1;
+            _context2.next = 4;
             return (0, _axios.default)({
               method: 'GET',
-              url: 'http://www.dollabs.com/api/users/logout'
+              url: "http://".concat(hostname, "/api/users/logout")
             });
 
-          case 3:
+          case 4:
             res = _context2.sent;
 
             if (res.data.status = 'success') {
               location.reload(true);
             }
 
-            _context2.next = 11;
+            _context2.next = 12;
             break;
 
-          case 7:
-            _context2.prev = 7;
-            _context2.t0 = _context2["catch"](0);
+          case 8:
+            _context2.prev = 8;
+            _context2.t0 = _context2["catch"](1);
             console.log(_context2.t0);
             alert('Error logging out! Try again.');
 
-          case 11:
+          case 12:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[0, 7]]);
+    }, _callee2, null, [[1, 8]]);
   }));
 
   return function logout() {
@@ -8602,7 +8604,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var filterText = function filterText(htmlText, pClass) {
   var result;
-  console.log(result);
   result = htmlText.replaceAll('<p>', "<p class=\"".concat(pClass, "\">"));
   return result;
 };
@@ -8611,20 +8612,21 @@ exports.filterText = filterText;
 
 var createNew = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(type, data, loadPage) {
-    var res;
+    var hostname, res;
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            _context.next = 3;
+            hostname = "" || location.hostname;
+            _context.next = 4;
             return (0, _axios.default)({
               method: 'POST',
-              url: "http://www.dollabs.com/api/".concat(type, "/"),
+              url: "http://".concat(hostname, "/api/").concat(type, "/"),
               data: data
             });
 
-          case 3:
+          case 4:
             res = _context.sent;
 
             if (res.data.status === 'success') {
@@ -8634,21 +8636,21 @@ var createNew = /*#__PURE__*/function () {
               }, 1000);
             }
 
-            _context.next = 11;
+            _context.next = 12;
             break;
 
-          case 7:
-            _context.prev = 7;
+          case 8:
+            _context.prev = 8;
             _context.t0 = _context["catch"](0);
             alert(_context.t0.response.data.message);
             console.log(_context.t0.response);
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 7]]);
+    }, _callee, null, [[0, 8]]);
   }));
 
   return function createNew(_x, _x2, _x3) {
@@ -8660,20 +8662,21 @@ exports.createNew = createNew;
 
 var updateCurrentData = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(type, data, loadPage, id) {
-    var res;
+    var hostname, res;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.prev = 0;
-            _context2.next = 3;
+            hostname = "" || location.hostname;
+            _context2.next = 4;
             return (0, _axios.default)({
               method: 'PATCH',
-              url: "http://www.dollabs.com/api/".concat(type, "/").concat(id),
+              url: "http://".concat(hostname, "/api/").concat(type, "/").concat(id),
               data: data
             });
 
-          case 3:
+          case 4:
             res = _context2.sent;
 
             if (res.data.status === 'success') {
@@ -8683,21 +8686,21 @@ var updateCurrentData = /*#__PURE__*/function () {
               }, 1000);
             }
 
-            _context2.next = 11;
+            _context2.next = 12;
             break;
 
-          case 7:
-            _context2.prev = 7;
+          case 8:
+            _context2.prev = 8;
             _context2.t0 = _context2["catch"](0);
             alert(_context2.t0.response.data.message);
             console.log(_context2.t0.response);
 
-          case 11:
+          case 12:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[0, 7]]);
+    }, _callee2, null, [[0, 8]]);
   }));
 
   return function updateCurrentData(_x4, _x5, _x6, _x7) {
@@ -8709,19 +8712,20 @@ exports.updateCurrentData = updateCurrentData;
 
 var deleteCurrentData = /*#__PURE__*/function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(type, id) {
-    var res;
+    var hostname, res;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.prev = 0;
-            _context3.next = 3;
+            hostname = "" || location.hostname;
+            _context3.next = 4;
             return (0, _axios.default)({
               method: 'DELETE',
-              url: "http://www.dollabs.com/api/".concat(type, "/").concat(id)
+              url: "http://".concat(hostname, "/api/").concat(type, "/").concat(id)
             });
 
-          case 3:
+          case 4:
             res = _context3.sent;
 
             if (res.status === 204) {
@@ -8732,21 +8736,21 @@ var deleteCurrentData = /*#__PURE__*/function () {
               }, 1000);
             }
 
-            _context3.next = 11;
+            _context3.next = 12;
             break;
 
-          case 7:
-            _context3.prev = 7;
+          case 8:
+            _context3.prev = 8;
             _context3.t0 = _context3["catch"](0);
             alert(_context3.t0.response.data.message);
             console.log(_context3.t0.response);
 
-          case 11:
+          case 12:
           case "end":
             return _context3.stop();
         }
       }
-    }, _callee3, null, [[0, 7]]);
+    }, _callee3, null, [[0, 8]]);
   }));
 
   return function deleteCurrentData(_x8, _x9) {
@@ -9319,7 +9323,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59768" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62149" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

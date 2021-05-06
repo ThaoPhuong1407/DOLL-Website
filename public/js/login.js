@@ -1,10 +1,11 @@
 import axios from 'axios';
 
 export const login = async (email, password) => {
+    const hostname = "" || location.hostname;
     try {
         const res = await axios({
             method: 'POST',
-            url: 'http://www.dollabs.com/api/users/login', 
+            url: `http://${hostname}/api/users/login`, 
             data: { email: email, password: password },
         });
 
@@ -21,10 +22,11 @@ export const login = async (email, password) => {
 }
 
 export const logout = async () => {
+    const hostname = "" || location.hostname;
     try {
         const res = await axios({
             method: 'GET',
-            url: 'http://www.dollabs.com/api/users/logout', 
+            url: `http://${hostname}/api/users/logout`, 
         });
         if (res.data.status = 'success') {
             location.reload(true);

@@ -2,17 +2,16 @@ import axios from 'axios';
 
 export const filterText = (htmlText, pClass) => {
     let result;
-    console.log(result);
-
     result = htmlText.replaceAll('<p>', `<p class="${pClass}">`);
     return result;
 }
 
 export const createNew = async (type, data, loadPage) => {
     try {
+        const hostname = "" || location.hostname;
         const res = await axios({
             method: 'POST',
-            url: `http://www.dollabs.com/api/${type}/`, 
+            url: `http://${hostname}/api/${type}/`, 
             data: data,    
         });
 
@@ -30,9 +29,10 @@ export const createNew = async (type, data, loadPage) => {
 
 export const updateCurrentData = async (type, data, loadPage, id) => {
     try {
+        const hostname = "" || location.hostname;
         const res = await axios({
             method: 'PATCH',
-            url: `http://www.dollabs.com/api/${type}/${id}`, 
+            url: `http://${hostname}/api/${type}/${id}`, 
             data: data,    
         });
 
@@ -50,9 +50,10 @@ export const updateCurrentData = async (type, data, loadPage, id) => {
 
 export const deleteCurrentData = async (type, id) => {
     try {
+        const hostname = "" || location.hostname;
         const res = await axios({
             method: 'DELETE',
-            url: `http://www.dollabs.com/api/${type}/${id}`,    
+            url: `http://${hostname}/api/${type}/${id}`,    
         });
 
         if (res.status === 204) {
