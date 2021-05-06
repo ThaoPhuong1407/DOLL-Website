@@ -8457,7 +8457,7 @@ var login = /*#__PURE__*/function () {
             _context.next = 3;
             return (0, _axios.default)({
               method: 'POST',
-              url: 'http://localhost:3000/api/users/login',
+              url: 'http://www.dollabs.com/api/users/login',
               data: {
                 email: email,
                 password: password
@@ -8509,7 +8509,7 @@ var logout = /*#__PURE__*/function () {
             _context2.next = 3;
             return (0, _axios.default)({
               method: 'GET',
-              url: 'http://localhost:3000/api/users/logout'
+              url: 'http://www.dollabs.com/api/users/logout'
             });
 
           case 3:
@@ -8620,7 +8620,7 @@ var createNew = /*#__PURE__*/function () {
             _context.next = 3;
             return (0, _axios.default)({
               method: 'POST',
-              url: "http://localhost:3000/api/".concat(type, "/"),
+              url: "http://www.dollabs.com/api/".concat(type, "/"),
               data: data
             });
 
@@ -8669,7 +8669,7 @@ var updateCurrentData = /*#__PURE__*/function () {
             _context2.next = 3;
             return (0, _axios.default)({
               method: 'PATCH',
-              url: "http://localhost:3000/api/".concat(type, "/").concat(id),
+              url: "http://www.dollabs.com/api/".concat(type, "/").concat(id),
               data: data
             });
 
@@ -8718,7 +8718,7 @@ var deleteCurrentData = /*#__PURE__*/function () {
             _context3.next = 3;
             return (0, _axios.default)({
               method: 'DELETE',
-              url: "http://localhost:3000/api/".concat(type, "/").concat(id)
+              url: "http://www.dollabs.com/api/".concat(type, "/").concat(id)
             });
 
           case 3:
@@ -9319,7 +9319,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59719" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59768" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

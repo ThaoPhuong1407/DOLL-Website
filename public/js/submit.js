@@ -12,7 +12,7 @@ export const createNew = async (type, data, loadPage) => {
     try {
         const res = await axios({
             method: 'POST',
-            url: `http://localhost:3000/api/${type}/`, 
+            url: `http://www.dollabs.com/api/${type}/`, 
             data: data,    
         });
 
@@ -32,7 +32,7 @@ export const updateCurrentData = async (type, data, loadPage, id) => {
     try {
         const res = await axios({
             method: 'PATCH',
-            url: `http://localhost:3000/api/${type}/${id}`, 
+            url: `http://www.dollabs.com/api/${type}/${id}`, 
             data: data,    
         });
 
@@ -52,7 +52,7 @@ export const deleteCurrentData = async (type, id) => {
     try {
         const res = await axios({
             method: 'DELETE',
-            url: `http://localhost:3000/api/${type}/${id}`,    
+            url: `http://www.dollabs.com/api/${type}/${id}`,    
         });
 
         if (res.status === 204) {
