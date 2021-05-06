@@ -1,7 +1,7 @@
 const { promisify } = require('util');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
-const sendEmail = require('../utils/Email');
+const sendEmail = require('../utils/email');
 const crypto = require('crypto');
 
 
