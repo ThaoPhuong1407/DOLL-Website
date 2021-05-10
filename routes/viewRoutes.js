@@ -12,6 +12,7 @@ const router = express.Router();
 /* -------------- */
 router.use(authController.isLoggedIn);
 router.get('/', viewController.getHome);
+router.get('/IWSSL-2021', viewController.getWorkshop);
 router.get('/about', viewController.getAbout);
 router.get('/contact', viewController.getContact);
 router.get('/newsandprojects', viewController.getNewsProjects);

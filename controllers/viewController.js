@@ -29,6 +29,7 @@ exports.getHome = catchAsync(async (req, res, next) => {
   }
    // 2) Render template usng data from step 1
   res.status(200).render('home', {
+    status: 'success',
     updates,
     solutions,
   });
@@ -40,6 +41,7 @@ exports.getAbout = catchAsync(async (req, res, next) => {
 
   // 2) Render template usng data from step 1
   res.status(200).render('about', {
+    status: 'success',
     people: people,
   });
 });
@@ -89,6 +91,7 @@ exports.getNewsProjects = catchAsync(async (req, res, next) => {
  
   // 2) Render template usng data from step 1
   res.status(200).render('newsandprojects', {
+    status: 'success',
     title: 'All Press Releases',
     posts: press,
     projects: allProjects,
@@ -121,6 +124,7 @@ exports.getPost = catchAsync(async (req, res, next) => {
 
   // 2) Render template usng data from step 1
   res.status(200).render('post', {
+    status: 'success',
     title: post.title,
     author: post.author,
     source: post.source,
@@ -181,6 +185,7 @@ exports.getProject = catchAsync(async (req, res, next) => {
 
 exports.getLoginForm = async (req, res, next) => {
   res.status(200).render('login', {
+    status: 'success',
     title: 'Log into your account',
   });
 };
@@ -203,9 +208,16 @@ exports.getInputForm = async (req, res, next) => {
   }
 
   res.status(200).render('input', {
+    status: 'success',
     title: 'Enter data',
     type: params,
     value: 'test',
     oldData,
   });
 };
+
+exports.getWorkshop = (req, res, next) => {
+  res.status(200).render('workshop', {
+    status: 'success'
+  });
+}
