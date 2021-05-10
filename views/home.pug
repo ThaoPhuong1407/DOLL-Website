@@ -38,7 +38,18 @@ block content
             each update in updates 
                 .row
                     .story
-                        if(update.body === "" || update.body.length < 50)
+                        if (!update.body)
+                            .story__text.non-decoration
+                                h3.heading-tertiary.u-margin-bottom-small #{update.title}
+                                p.feature-box__text
+                                    em DOLL — #{`${update.dateCreated.toLocaleString('en-us', {year: 'numeric'}) * 1}`}
+
+                                if user
+                                    .crud.submitInfoRight
+                                        a.btn-text.u-margin-top-medium.u-margin-small(href=`/input/update-update-${update._id}`)= `Update`.toUpperCase()
+                                        a.btn-text.u-margin-top-medium.u-margin-small.delete(href='/abc' id=`update-delete-${update._id}`)= `Delete`.toUpperCase()
+
+                        else if(update.body === "" || update.body.length < 50)
                             .story__text.non-decoration
                                 h3.heading-tertiary.u-margin-bottom-small #{update.title}
                                 p.feature-box__text
