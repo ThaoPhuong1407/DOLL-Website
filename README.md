@@ -1,6 +1,6 @@
 # DOLL-website-v1
 
-### To Back Up current data in case of unwanted CRUD operations
+### To Back Up current data in case of unwanted future CRUD operations
 
 1. cd to utils dir
 2. mongo "mongodb+srv://dollwebsite.4stoq.mongodb.net/DollWebsite" --username thao --password Asd8538873 < backupDollWeb.js
