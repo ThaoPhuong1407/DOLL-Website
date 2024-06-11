@@ -1,5 +1,5 @@
-const express   = require('express');
-const path      = require('path');
+const express = require('express');
+const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 
@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 
-// Routes related 
+// Routes related
 const viewRouter = require('./routes/viewRoutes');
 const userRouter = require('./routes/userRoutes');
 const postRouter = require('./routes/postRoutes');
@@ -19,13 +19,14 @@ const solutionRouter = require('./routes/solutionRoutes');
 const app = express();
 
 // ideally, all request info should be in the req, but express doesn't do that ==> we need a middleware: express.json()
+
 app.use(express.json()); // parse data from body
 app.use(cookieParser()); // parse data from cookie
 app.set('view engine', 'pug'); // Express framework supports pug template
 app.set('views', path.join(__dirname, 'views')); // view engine is called "views" in Express. Set "views" to path ./views
 app.use(express.static(path.join(__dirname, 'public/'))); // Serving static files from the public folders
 
-// Middleware for debugging purposes 
+// Middleware for debugging purposes
 app.use((req, res, next) => {
   // console.log(req.cookies);
   next();
@@ -33,19 +34,19 @@ app.use((req, res, next) => {
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
-    app.use(morgan('dev'));
+  app.use(morgan('dev'));
 }
 
 /* -------------- */
 /*    ROUTES      */
 /* -------------- */
 app.use('/', viewRouter); // templates
-app.use('/api/users', userRouter); 
-app.use('/api/post', postRouter); 
-app.use('/api/project', projectRouter); 
-app.use('/api/person', personRouter); 
-app.use('/api/update', updateRouter); 
-app.use('/api/solution', solutionRouter); 
+app.use('/api/users', userRouter);
+app.use('/api/post', postRouter);
+app.use('/api/project', projectRouter);
+app.use('/api/person', personRouter);
+app.use('/api/update', updateRouter);
+app.use('/api/solution', solutionRouter);
 
 // all = for all routes: post, get, etc.
 app.all('*', (req, res, next) => {
@@ -57,5 +58,3 @@ app.all('*', (req, res, next) => {
 app.use(globalErrorHandler);
 
 module.exports = app;
-
-
