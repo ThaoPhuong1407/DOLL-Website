@@ -8,6 +8,8 @@ export const login = async (email, password) => {
   if (process.env.NODE_ENV === 'production')
     hostname = `https://${location.hostname}`;
 
+  console.log(process.env.NODE_ENV);
+  console.log(hostname);
   try {
     const res = await axios({
       method: 'POST',

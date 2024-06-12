@@ -8455,8 +8455,10 @@ var login = /*#__PURE__*/function () {
           case 0:
             if ("development" === 'development') hostname = 'http://localhost:3000';
             if ("development" === 'production') hostname = "https://".concat(location.hostname);
-            _context.prev = 2;
-            _context.next = 5;
+            console.log("development");
+            console.log(hostname);
+            _context.prev = 4;
+            _context.next = 7;
             return (0, _axios.default)({
               method: 'POST',
               url: "".concat(hostname, "/api/users/login"),
@@ -8466,7 +8468,7 @@ var login = /*#__PURE__*/function () {
               }
             });
 
-          case 5:
+          case 7:
             res = _context.sent;
 
             if (res.data.status === 'success') {
@@ -8476,21 +8478,21 @@ var login = /*#__PURE__*/function () {
               }, 1500);
             }
 
-            _context.next = 13;
+            _context.next = 15;
             break;
 
-          case 9:
-            _context.prev = 9;
-            _context.t0 = _context["catch"](2);
+          case 11:
+            _context.prev = 11;
+            _context.t0 = _context["catch"](4);
             alert(_context.t0.response.data.message);
             console.log(_context.t0.response);
 
-          case 13:
+          case 15:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[2, 9]]);
+    }, _callee, null, [[4, 11]]);
   }));
 
   return function login(_x, _x2) {
