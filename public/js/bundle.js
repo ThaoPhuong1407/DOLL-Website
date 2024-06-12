@@ -8453,43 +8453,44 @@ var login = /*#__PURE__*/function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            hostname = "" || location.hostname;
-            _context.prev = 1;
-            _context.next = 4;
+            if ("development" === 'development') hostname = 'http://localhost:3000';
+            if ("development" === 'production') hostname = "https://".concat(location.hostname);
+            _context.prev = 2;
+            _context.next = 5;
             return (0, _axios.default)({
-              method: "POST",
-              url: "https://".concat(hostname, "/api/users/login"),
+              method: 'POST',
+              url: "".concat(hostname, "/api/users/login"),
               data: {
                 email: email,
                 password: password
               }
             });
 
-          case 4:
+          case 5:
             res = _context.sent;
 
-            if (res.data.status === "success") {
-              alert("Logged in successfully");
+            if (res.data.status === 'success') {
+              alert('Logged in successfully');
               window.setTimeout(function () {
-                location.assign("/");
+                location.assign('/');
               }, 1500);
             }
 
-            _context.next = 12;
+            _context.next = 13;
             break;
 
-          case 8:
-            _context.prev = 8;
-            _context.t0 = _context["catch"](1);
+          case 9:
+            _context.prev = 9;
+            _context.t0 = _context["catch"](2);
             alert(_context.t0.response.data.message);
             console.log(_context.t0.response);
 
-          case 12:
+          case 13:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[1, 8]]);
+    }, _callee, null, [[2, 9]]);
   }));
 
   return function login(_x, _x2) {
@@ -8506,36 +8507,37 @@ var logout = /*#__PURE__*/function () {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            hostname = "" || location.hostname;
-            _context2.prev = 1;
-            _context2.next = 4;
+            if ("development" === 'development') hostname = 'http://localhost:3000';
+            if ("development" === 'production') hostname = "https://".concat(location.hostname);
+            _context2.prev = 2;
+            _context2.next = 5;
             return (0, _axios.default)({
-              method: "GET",
-              url: "https://".concat(hostname, "/api/users/logout")
+              method: 'GET',
+              url: "".concat(hostname, "/api/users/logout")
             });
 
-          case 4:
+          case 5:
             res = _context2.sent;
 
-            if (res.data.status = "success") {
+            if (res.data.status = 'success') {
               location.reload(true);
             }
 
-            _context2.next = 12;
+            _context2.next = 13;
             break;
 
-          case 8:
-            _context2.prev = 8;
-            _context2.t0 = _context2["catch"](1);
+          case 9:
+            _context2.prev = 9;
+            _context2.t0 = _context2["catch"](2);
             console.log(_context2.t0);
-            alert("Error logging out! Try again.");
+            alert('Error logging out! Try again.');
 
-          case 12:
+          case 13:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[1, 8]]);
+    }, _callee2, null, [[2, 9]]);
   }));
 
   return function logout() {
@@ -8618,15 +8620,16 @@ var createNew = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            hostname = "" || location.hostname;
-            _context.next = 4;
+            if ("development" === 'development') hostname = 'http://localhost:3000';
+            if ("development" === 'production') hostname = "https://".concat(location.hostname);
+            _context.next = 5;
             return (0, _axios.default)({
               method: 'POST',
-              url: "http://".concat(hostname, "/api/").concat(type, "/"),
+              url: "".concat(hostname, "/api/").concat(type, "/"),
               data: data
             });
 
-          case 4:
+          case 5:
             res = _context.sent;
 
             if (res.data.status === 'success') {
@@ -8636,21 +8639,21 @@ var createNew = /*#__PURE__*/function () {
               }, 1000);
             }
 
-            _context.next = 12;
+            _context.next = 13;
             break;
 
-          case 8:
-            _context.prev = 8;
+          case 9:
+            _context.prev = 9;
             _context.t0 = _context["catch"](0);
             alert(_context.t0.response.data.message);
             console.log(_context.t0.response);
 
-          case 12:
+          case 13:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 8]]);
+    }, _callee, null, [[0, 9]]);
   }));
 
   return function createNew(_x, _x2, _x3) {
@@ -8668,15 +8671,16 @@ var updateCurrentData = /*#__PURE__*/function () {
         switch (_context2.prev = _context2.next) {
           case 0:
             _context2.prev = 0;
-            hostname = "" || location.hostname;
-            _context2.next = 4;
+            if ("development" === 'development') hostname = 'http://localhost:3000';
+            if ("development" === 'production') hostname = "https://".concat(location.hostname);
+            _context2.next = 5;
             return (0, _axios.default)({
               method: 'PATCH',
-              url: "http://".concat(hostname, "/api/").concat(type, "/").concat(id),
+              url: "".concat(hostname, "/api/").concat(type, "/").concat(id),
               data: data
             });
 
-          case 4:
+          case 5:
             res = _context2.sent;
 
             if (res.data.status === 'success') {
@@ -8686,21 +8690,21 @@ var updateCurrentData = /*#__PURE__*/function () {
               }, 1000);
             }
 
-            _context2.next = 12;
+            _context2.next = 13;
             break;
 
-          case 8:
-            _context2.prev = 8;
+          case 9:
+            _context2.prev = 9;
             _context2.t0 = _context2["catch"](0);
             alert(_context2.t0.response.data.message);
             console.log(_context2.t0.response);
 
-          case 12:
+          case 13:
           case "end":
             return _context2.stop();
         }
       }
-    }, _callee2, null, [[0, 8]]);
+    }, _callee2, null, [[0, 9]]);
   }));
 
   return function updateCurrentData(_x4, _x5, _x6, _x7) {
@@ -8718,14 +8722,15 @@ var deleteCurrentData = /*#__PURE__*/function () {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.prev = 0;
-            hostname = "" || location.hostname;
-            _context3.next = 4;
+            if ("development" === 'development') hostname = 'http://localhost:3000';
+            if ("development" === 'production') hostname = "https://".concat(location.hostname);
+            _context3.next = 5;
             return (0, _axios.default)({
               method: 'DELETE',
-              url: "http://".concat(hostname, "/api/").concat(type, "/").concat(id)
+              url: "".concat(hostname, "/api/").concat(type, "/").concat(id)
             });
 
-          case 4:
+          case 5:
             res = _context3.sent;
 
             if (res.status === 204) {
@@ -8736,21 +8741,21 @@ var deleteCurrentData = /*#__PURE__*/function () {
               }, 1000);
             }
 
-            _context3.next = 12;
+            _context3.next = 13;
             break;
 
-          case 8:
-            _context3.prev = 8;
+          case 9:
+            _context3.prev = 9;
             _context3.t0 = _context3["catch"](0);
             alert(_context3.t0.response.data.message);
             console.log(_context3.t0.response);
 
-          case 12:
+          case 13:
           case "end":
             return _context3.stop();
         }
       }
-    }, _callee3, null, [[0, 8]]);
+    }, _callee3, null, [[0, 9]]);
   }));
 
   return function deleteCurrentData(_x8, _x9) {
@@ -9323,7 +9328,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60063" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50844" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
