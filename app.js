@@ -19,7 +19,6 @@ const solutionRouter = require('./routes/solutionRoutes');
 const app = express();
 
 // ideally, all request info should be in the req, but express doesn't do that ==> we need a middleware: express.json()
-
 app.use(express.json()); // parse data from body
 app.use(cookieParser()); // parse data from cookie
 app.set('view engine', 'pug'); // Express framework supports pug template
@@ -28,7 +27,6 @@ app.use(express.static(path.join(__dirname, 'public/'))); // Serving static file
 
 // Middleware for debugging purposes
 app.use((req, res, next) => {
-  // console.log(req.cookies);
   next();
 });
 
