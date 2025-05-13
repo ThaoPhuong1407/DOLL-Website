@@ -19,10 +19,11 @@ router.get('/newsandprojects', viewController.getNewsProjects);
 router.get('/post/:slug', viewController.getPost);
 router.get('/project/:slug', viewController.getProject);
 router.get('/construction', viewController.getConstruction);
-
+router.get('/iwssl-2024', (req, res) => {
+  res.redirect(301, '/post/iwssl-workshop-661d4a05ed1f7c00144f54ec');
+});
 // Updating data
 router.get('/login', viewController.getLoginForm);
 router.get('/input/:type', viewController.getInputForm);
-
 
 module.exports = router;
