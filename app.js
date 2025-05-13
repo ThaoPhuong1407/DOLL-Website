@@ -38,6 +38,20 @@ if (process.env.NODE_ENV === 'development') {
 /* -------------- */
 /*    ROUTES      */
 /* -------------- */
+// Alias for IWSSL workshop
+app.use((req, res, next) => {
+  if (
+    req.hostname === 'iwssl-2024.org' ||
+    req.hostname === 'www.iwssl-2024.org'
+  ) {
+    return res.redirect(
+      301,
+      'https://www.dollabs.com/post/iwssl-workshop-661d4a05ed1f7c00144f54ec'
+    );
+  }
+  next();
+});
+
 app.use('/', viewRouter); // templates
 app.use('/api/users', userRouter);
 app.use('/api/post', postRouter);
