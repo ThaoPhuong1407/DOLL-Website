@@ -21,5 +21,6 @@ All source code is available in github: https://github.com/ThaoPhuong1407/DOLL-W
 
 1. npm run dev
 2. Go to localhost:3000/login and login
+3. Might want to do: cross-env NODE_ENV=development parcel watch ./public/js/index.js --out-dir ./public/js --public-url /js --out-file bundle.js
 
 - To add image: https://lh3.googleusercontent.com/d/IMAGE-ID (get from sharing)

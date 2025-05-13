@@ -14,6 +14,12 @@ const router = express.Router();
 router.get('/iwssl-2024', (req, res) => {
   res.redirect(301, '/post/iwssl-workshop-661d4a05ed1f7c00144f54ec');
 });
+router.get('/iwssl-2025', (req, res) => {
+  res.redirect(
+    301,
+    '/post/the-fifth-international-workshop-on-situated-self-guided-learning-(iwssl-2025)-6823998f4309ec0a18d09122'
+  );
+});
 router.get('/IWSSL-2021', viewController.getWorkshop);
 
 router.use(authController.isLoggedIn);
