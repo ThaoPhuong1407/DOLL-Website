@@ -11,3 +11,8 @@ If AWS is gone, we can simply switch to a different cloud storage provider using
 ### To Back Up website:
 
 All source code is available in github: https://github.com/ThaoPhuong1407/DOLL-Website
+
+// Before pushing to Heroku
+// 1. Do a build for the server
+// 2. Do a build for a client: build:js
+// "git push heroku main" To force an update
