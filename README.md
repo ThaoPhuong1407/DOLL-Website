@@ -16,3 +16,10 @@ All source code is available in github: https://github.com/ThaoPhuong1407/DOLL-W
 // 1. Do a build for the server
 // 2. Do a build for a client: build:js
 // "git push heroku main" To force an update
+
+### How to Update POST
+
+1. npm run dev
+2. Go to localhost:3000/login and login
+
+- To add image: https://lh3.googleusercontent.com/d/IMAGE-ID (get from sharing)

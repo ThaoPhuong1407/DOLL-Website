@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 // Error related
 const AppError = require('./utils/appError');
@@ -34,6 +35,28 @@ app.use((req, res, next) => {
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+// CORS
+const allowedOrigins = [
+  'http://www.dollabs.com',
+  'https://www.dollabs.com',
+  'http://localhost:3000',
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error('Not allowed by CORS'));
+    },
+    credentials: true,
+  })
+);
+
+// Handle preflight requests
+app.options('*', cors());
 
 /* -------------- */
 /*    ROUTES      */
